@@ -12,7 +12,7 @@ import {
   type SpacingPref,
 } from "@/lib/a11y-prefs";
 import { FocusTrap } from "focus-trap-react";
-import { Accessibility, X } from "lucide-react";
+import { Eye, X } from "lucide-react";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -305,7 +305,7 @@ export function A11ySettingsPanel() {
         aria-controls={open ? "a11y-dialog" : undefined}
         aria-label={t.a11y.panelOpen}
       >
-        <Accessibility className="size-6" strokeWidth={2} aria-hidden />
+        <Eye className="size-6" strokeWidth={1.75} aria-hidden />
       </button>
       {panel ? createPortal(panel, document.body) : null}
     </>

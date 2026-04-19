@@ -52,9 +52,46 @@ html[data-a11y-spacing="relaxed"] body {
   line-height: 1.7;
 }
 
-/* Режим «глаз»: ч/б для слабовидящих */
-html[data-a11y-contrast="true"] body {
+/* Режим контраста: ч/б — только header / main / footer.
+   Не вешаем filter на body: иначе ломается position:fixed у модалок (визуально «уезжают вниз»). */
+html[data-a11y-contrast="true"] header,
+html[data-a11y-contrast="true"] #main-content,
+html[data-a11y-contrast="true"] footer {
   filter: grayscale(1) contrast(1.12);
+}
+
+/* Режим контраста: filter на #main-content «выбеливает» полутона градиентов над фото —
+   усиливаем затемнение, чтобы белый текст не сливался с фоном. */
+html[data-a11y-contrast="true"] #main-content .hero-slider-vignette {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 22%,
+    rgba(0, 0, 0, 0.42) 45%,
+    rgba(0, 0, 0, 0.82) 62%,
+    rgba(0, 0, 0, 0.96) 78%,
+    #000 100%
+  ) !important;
+}
+
+html[data-a11y-contrast="true"] #main-content .hero-pick-vignette {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.94) 0%,
+    rgba(0, 0, 0, 0.55) 42%,
+    rgba(0, 0, 0, 0.12) 72%,
+    transparent 100%
+  ) !important;
+}
+
+html[data-a11y-contrast="true"] #main-content .peak-card-vignette {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.5) 38%,
+    rgba(0, 0, 0, 0.1) 68%,
+    transparent 100%
+  ) !important;
 }
 
 html[data-a11y-underline-links="true"] a {

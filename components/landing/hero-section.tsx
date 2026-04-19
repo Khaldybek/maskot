@@ -87,7 +87,7 @@ export function HeroSection({ hero, localePrefix }: Props) {
                     className="object-cover transition duration-300 group-hover:scale-105"
                     sizes="(max-width: 1024px) 280px, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                  <div className="hero-pick-vignette absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
                   <span className="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white drop-shadow sm:text-base">
                     {hero.pickEventsCaption}
                   </span>
@@ -103,7 +103,7 @@ export function HeroSection({ hero, localePrefix }: Props) {
                     className="object-cover transition duration-300 group-hover:scale-105"
                     sizes="(max-width: 1024px) 280px, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                  <div className="hero-pick-vignette absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
                   <span className="absolute bottom-3 left-3 right-3 text-sm font-semibold leading-tight text-white drop-shadow sm:text-base">
                     {hero.pickMuseumsCaption}
                   </span>

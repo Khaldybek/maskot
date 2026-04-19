@@ -19,10 +19,10 @@ export function GallerySection({ gallery }: Props) {
       className="scroll-mt-16 overflow-x-clip bg-white py-14 sm:py-20"
     >
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50">
+        <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">
           {gallery.title}
         </h2>
-        <p className="mt-3 max-w-2xl text-zinc-600 dark:text-zinc-400">
+        <p className="mt-3 max-w-2xl text-zinc-600">
           {gallery.hint}
         </p>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

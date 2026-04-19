@@ -18,10 +18,10 @@ export function PeaksSection({ peaks, localePrefix }: Props) {
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0">
-            <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl lg:text-4xl lg:leading-tight dark:text-zinc-50">
+            <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl lg:text-4xl lg:leading-tight">
               {peaks.title}
             </h2>
-            <p className="mt-2 text-base text-neutral-600 dark:text-zinc-400">
+            <p className="mt-2 text-base text-neutral-600">
               {peaks.subtitle}
             </p>
           </div>
@@ -47,10 +47,10 @@ export function PeaksSection({ peaks, localePrefix }: Props) {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"
+                    className="peak-card-vignette absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"
                     aria-hidden
                   />
-                  <p className="absolute bottom-4 left-4 right-4 text-base font-semibold leading-snug text-white drop-shadow-sm sm:bottom-5 sm:left-5 sm:right-5">
+                  <p className="absolute bottom-4 left-4 right-4 text-lg font-semibold leading-snug text-white drop-shadow sm:bottom-5 sm:left-5 sm:right-5 sm:text-xl">
                     {card.imageLabel}
                   </p>
                 </div>
@@ -59,7 +59,7 @@ export function PeaksSection({ peaks, localePrefix }: Props) {
                   <h3 className="text-lg font-bold text-[#DE2E06] sm:text-xl">
                     {card.title}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-800 dark:text-zinc-300 sm:text-[15px]">
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-800 sm:text-[15px]">
                     {card.description}
                   </p>
                   <Link

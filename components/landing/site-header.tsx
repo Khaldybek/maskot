@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
-import { Accessibility, Menu, X } from "lucide-react";
+import { Eye, Menu, X } from "lucide-react";
 import { A11Y_PANEL_OPEN_EVENT } from "@/lib/a11y-prefs";
 import { AlmatyTime } from "@/components/landing/almaty-time";
 import { useLocale, useMessages } from "@/components/locale-provider";
@@ -187,7 +187,7 @@ export function SiteHeader({ weatherSlot, a11ySlot }: SiteHeaderProps) {
                 setOpen(false);
               }}
             >
-              <Accessibility className="size-5 shrink-0" aria-hidden />
+              <Eye className="size-5 shrink-0" aria-hidden />
               {t.a11y.panelTitle}
             </button>
           </div>

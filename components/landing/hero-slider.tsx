@@ -78,7 +78,7 @@ export function HeroSlider({
         />
 
         <div
-          className="pointer-events-none absolute inset-0"
+          className="hero-slider-vignette pointer-events-none absolute inset-0"
           style={{ background: SLIDER_BOTTOM_GRADIENT }}
           aria-hidden
         />

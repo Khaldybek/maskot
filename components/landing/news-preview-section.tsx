@@ -17,10 +17,10 @@ export function NewsPreviewSection({ news, localePrefix }: Props) {
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0">
-            <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl lg:text-4xl lg:leading-tight dark:text-zinc-50">
+            <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl lg:text-4xl lg:leading-tight">
               {news.title}
             </h2>
-            <p className="mt-2 text-base text-neutral-600 dark:text-zinc-400">
+            <p className="mt-2 text-base text-neutral-600">
               {news.subtitle}
             </p>
           </div>
@@ -58,11 +58,11 @@ export function NewsPreviewSection({ news, localePrefix }: Props) {
                           ? "2026-04-21"
                           : "2026-04-10"
                     }
-                    className="mt-4 block text-sm font-normal text-zinc-400 dark:text-zinc-500"
+                    className="mt-4 block text-sm font-normal text-zinc-500"
                   >
                     {item.date}
                   </time>
-                  <h3 className="mt-2 text-base font-bold leading-snug text-neutral-900 transition group-hover:text-[#DE2E06] dark:text-zinc-50 dark:group-hover:text-[#DE2E06] sm:text-[17px]">
+                  <h3 className="mt-2 text-base font-bold leading-snug text-neutral-900 transition group-hover:text-[#DE2E06] sm:text-[17px]">
                     {item.headline}
                   </h3>
                 </article>
