@@ -49,17 +49,17 @@ export function BrandPageContent({ content }: Props) {
         </div>
 
         <section className="mx-auto mt-16 max-w-3xl sm:mt-20 lg:mt-24">
-          <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-zinc-50 sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
             {content.identityTitle}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-neutral-800 dark:text-zinc-300">
+          <p className="mt-4 text-base leading-relaxed text-neutral-800">
             {content.identityBody}
           </p>
         </section>
 
         <section className="mt-16 flex flex-col gap-10 sm:mt-20 lg:mt-24 lg:flex-row lg:items-start lg:gap-14 xl:gap-20">
           <div className="order-1 w-full lg:order-none lg:max-w-[52%] lg:flex-1">
-            <div className="rounded-[1.75rem] bg-zinc-50 p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-800 sm:rounded-[2rem] sm:p-10">
+            <div className="rounded-[1.75rem] bg-zinc-50 p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-zinc-100 sm:rounded-[2rem] sm:p-10">
               <div className="flex flex-col items-center">
                 <div className="relative h-[154px] w-[148px] sm:h-[180px] sm:w-[172px]">
                   <Image
@@ -90,7 +90,7 @@ export function BrandPageContent({ content }: Props) {
                       aria-hidden
                     />
                   </div>
-                  <span className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-[#0062D2] dark:text-sky-400 sm:text-xs">
+                  <span className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-[#0062D2] sm:text-xs">
                     {content.iconLabelMountains}
                   </span>
                 </li>
@@ -102,7 +102,7 @@ export function BrandPageContent({ content }: Props) {
                       aria-hidden
                     />
                   </div>
-                  <span className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-[#0062D2] dark:text-sky-400 sm:text-xs">
+                  <span className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-[#0062D2] sm:text-xs">
                     {content.iconLabelApple}
                   </span>
                 </li>
@@ -114,7 +114,7 @@ export function BrandPageContent({ content }: Props) {
                       aria-hidden
                     />
                   </div>
-                  <span className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-[#0062D2] dark:text-sky-400 sm:text-xs">
+                  <span className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-[#0062D2] sm:text-xs">
                     {content.iconLabelYurt}
                   </span>
                 </li>
@@ -127,7 +127,7 @@ export function BrandPageContent({ content }: Props) {
                       ALA
                     </span>
                   </div>
-                  <span className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-[#0062D2] dark:text-sky-400 sm:text-xs">
+                  <span className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-[#0062D2] sm:text-xs">
                     {content.iconLabelAla}
                   </span>
                 </li>
@@ -136,13 +136,13 @@ export function BrandPageContent({ content }: Props) {
           </div>
 
           <div className="order-2 min-w-0 flex-1 space-y-4 lg:order-none">
-            <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-zinc-50 sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
               {content.logoConceptTitle}
             </h2>
             {content.logoConceptParagraphs.map((p, i) => (
               <p
                 key={i}
-                className="text-base leading-relaxed text-neutral-800 dark:text-zinc-300"
+                className="text-base leading-relaxed text-neutral-800"
               >
                 {p}
               </p>
@@ -151,36 +151,36 @@ export function BrandPageContent({ content }: Props) {
         </section>
 
         <section className="mt-20 sm:mt-24 lg:mt-28">
-          <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-zinc-50 sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
             {content.paletteTitle}
           </h2>
           <ul className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {content.colors.map((c) => (
               <li
                 key={c.hex}
-                className="overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-800"
+                className="overflow-hidden rounded-2xl border border-zinc-100 bg-white"
               >
                 <div
                   className="h-28 w-full sm:h-32"
                   style={{ backgroundColor: c.hex }}
                 />
-                <div className="space-y-2 p-5">
-                  <p className="text-base font-bold text-neutral-900 dark:text-zinc-50">
+                <div className="space-y-2 bg-white p-5 pt-4">
+                  <p className="text-base font-bold text-neutral-900">
                     {c.name}
                   </p>
-                  <p className="font-mono text-sm text-neutral-700 dark:text-zinc-300">
-                    <span className="text-neutral-500 dark:text-zinc-500">
+                  <p className="font-mono text-sm text-neutral-700">
+                    <span className="text-neutral-500">
                       {content.colorHexLabel}:{" "}
                     </span>
                     {c.hex}
                   </p>
-                  <p className="font-mono text-sm text-neutral-700 dark:text-zinc-300">
-                    <span className="text-neutral-500 dark:text-zinc-500">
+                  <p className="font-mono text-sm text-neutral-700">
+                    <span className="text-neutral-500">
                       {content.colorRgbLabel}:{" "}
                     </span>
                     {c.rgb}
                   </p>
-                  <p className="text-sm leading-snug text-neutral-600 dark:text-zinc-400">
+                  <p className="text-sm leading-snug text-neutral-600">
                     {c.role}
                   </p>
                 </div>
@@ -190,11 +190,11 @@ export function BrandPageContent({ content }: Props) {
         </section>
 
         <section className="mt-20 sm:mt-24 lg:mt-28">
-          <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-zinc-50 sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
             {content.typographyTitle}
           </h2>
           <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
-            <div className="rounded-2xl bg-white p-6 shadow-md ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-800 sm:p-8">
+            <div className="rounded-2xl border border-zinc-100 bg-white p-6 sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
                 {content.typographyPrimaryBadge}
               </p>
@@ -204,18 +204,18 @@ export function BrandPageContent({ content }: Props) {
               >
                 Archivo Black
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-neutral-700 dark:text-zinc-300">
+              <p className="mt-4 text-sm leading-relaxed text-neutral-700">
                 {content.typographyPrimaryDescription}
               </p>
-              <div className="mt-6 max-w-full overflow-x-auto rounded-lg">
+              <div className="mt-6 max-w-full overflow-x-auto rounded-lg bg-white">
                 <p
-                  className={`min-w-0 break-words text-xs leading-relaxed text-neutral-800 dark:text-zinc-300 sm:text-sm ${archivoBlack.className}`}
+                  className={`min-w-0 break-words text-xs leading-relaxed text-neutral-800 sm:text-sm ${archivoBlack.className}`}
                 >
                   {content.fontPreviewSample}
                 </p>
               </div>
             </div>
-            <div className="rounded-2xl bg-white p-6 shadow-md ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-800 sm:p-8">
+            <div className="rounded-2xl border border-zinc-100 bg-white p-6 sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
                 {content.typographySecondaryBadge}
               </p>
@@ -225,15 +225,15 @@ export function BrandPageContent({ content }: Props) {
               >
                 Inter
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-neutral-700 dark:text-zinc-300">
+              <p className="mt-4 text-sm leading-relaxed text-neutral-700">
                 {content.typographySecondaryDescription}
               </p>
-              <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
+              <p className="mt-3 text-xs text-zinc-500">
                 {content.typographySecondaryWeights}
               </p>
-              <div className="mt-6 max-w-full overflow-x-auto rounded-lg">
+              <div className="mt-6 max-w-full overflow-x-auto rounded-lg bg-white">
                 <p
-                  className={`min-w-0 break-words text-xs font-normal leading-relaxed text-neutral-800 dark:text-zinc-300 sm:text-sm ${inter.className}`}
+                  className={`min-w-0 break-words text-xs font-normal leading-relaxed text-neutral-800 sm:text-sm ${inter.className}`}
                 >
                   {content.fontPreviewSample}
                 </p>

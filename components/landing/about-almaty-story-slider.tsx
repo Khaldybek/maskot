@@ -38,7 +38,7 @@ export function AboutAlmatyStorySlider({
 
   return (
     <div className="relative min-w-0 w-full max-w-full">
-      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.75rem] bg-zinc-200 sm:rounded-[2rem] dark:bg-zinc-800">
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.75rem] bg-zinc-200 sm:aspect-[3/2] sm:rounded-[2rem] dark:bg-zinc-800">
         <Image
           key={images[safe]}
           src={images[safe]}

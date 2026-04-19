@@ -53,16 +53,23 @@ export function AboutAlmatyContent({ content }: Props) {
             <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
               {blocks.map((block, i) => {
                 const Icon = icons[i];
+                const isNatureCard = i === 3;
                 return (
-                  <li key={block.title}>
-                    <article className="h-full rounded-2xl bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-800">
-                      <div className="flex size-12 items-center justify-center rounded-full bg-rose-50 text-[#DE2E06] dark:bg-rose-950/50">
+                  <li key={block.title} className="min-w-0">
+                    <article
+                      className={
+                        isNatureCard
+                          ? "mx-auto flex aspect-square w-full max-w-[200px] flex-col rounded-2xl border border-zinc-100 bg-white p-5 sm:max-w-[220px] sm:p-6"
+                          : "flex h-full flex-col rounded-2xl border border-zinc-100 bg-white p-6"
+                      }
+                    >
+                      <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-rose-50 text-[#DE2E06]">
                         <Icon className="size-6" strokeWidth={1.75} aria-hidden />
                       </div>
-                      <h2 className="mt-4 text-lg font-bold text-neutral-900 dark:text-zinc-50">
+                      <h2 className="mt-4 text-lg font-bold text-neutral-900">
                         {block.title}
                       </h2>
-                      <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-zinc-400">
+                      <p className="mt-2 text-sm leading-relaxed text-neutral-600">
                         {block.description}
                       </p>
                     </article>
@@ -81,18 +88,18 @@ export function AboutAlmatyContent({ content }: Props) {
             return (
               <section
                 key={block.title}
-                className={`flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-12 xl:gap-16 ${
+                className={`flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12 xl:gap-16 ${
                   blockIndex % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
                 <div className="order-2 min-w-0 flex-1 space-y-4 lg:order-none">
-                  <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-zinc-50 sm:text-3xl">
+                  <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
                     {block.title}
                   </h2>
                   {block.paragraphs.map((p, pi) => (
                     <p
                       key={pi}
-                      className="text-base leading-relaxed text-neutral-700 dark:text-zinc-300"
+                      className="text-base leading-relaxed text-neutral-700"
                     >
                       {p}
                     </p>

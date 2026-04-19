@@ -17,10 +17,10 @@ export function NewsPreviewSection({ news, localePrefix }: Props) {
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0">
-            <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl lg:text-4xl lg:leading-tight">
+            <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl lg:leading-[1.1]">
               {news.title}
             </h2>
-            <p className="mt-2 text-base text-neutral-600">
+            <p className="mt-3 max-w-2xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
               {news.subtitle}
             </p>
           </div>

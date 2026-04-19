@@ -97,8 +97,8 @@ export function ContactPageContent({ content }: Props) {
         </div>
 
         <ul className="relative z-10 -mt-10 grid grid-cols-1 gap-4 sm:-mt-14 sm:grid-cols-2 lg:-mt-16 lg:grid-cols-4 lg:gap-5">
-          <li>
-            <article className="h-full rounded-2xl bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.1)] ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-800">
+          <li className="min-w-0">
+            <article className="h-full rounded-2xl border border-zinc-100 bg-white p-6">
               <Phone
                 className="size-8"
                 style={{ color: accent }}
@@ -108,7 +108,7 @@ export function ContactPageContent({ content }: Props) {
               <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-zinc-500">
                 {content.cardPhoneLabel}
               </p>
-              <div className="mt-2 space-y-1 font-bold text-neutral-900 dark:text-zinc-50">
+              <div className="mt-2 space-y-1 font-bold text-neutral-900">
                 {content.phones.map((p) => (
                   <a
                     key={p}
@@ -122,8 +122,8 @@ export function ContactPageContent({ content }: Props) {
               </div>
             </article>
           </li>
-          <li>
-            <article className="h-full rounded-2xl bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.1)] ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-800">
+          <li className="min-w-0">
+            <article className="h-full rounded-2xl border border-zinc-100 bg-white p-6">
               <Mail
                 className="size-8"
                 style={{ color: accent }}
@@ -142,8 +142,8 @@ export function ContactPageContent({ content }: Props) {
               </a>
             </article>
           </li>
-          <li>
-            <article className="h-full rounded-2xl bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.1)] ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-800">
+          <li className="min-w-0">
+            <article className="h-full rounded-2xl border border-zinc-100 bg-white p-6">
               <MapPin
                 className="size-8"
                 style={{ color: accent }}
@@ -153,7 +153,7 @@ export function ContactPageContent({ content }: Props) {
               <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-zinc-500">
                 {content.cardAddressLabel}
               </p>
-              <div className="mt-2 font-bold text-neutral-900 dark:text-zinc-50">
+              <div className="mt-2 font-bold text-neutral-900">
                 <a
                   href={content.addressMapUrl}
                   target="_blank"
@@ -163,16 +163,16 @@ export function ContactPageContent({ content }: Props) {
                 >
                   {content.addressStreet}
                 </a>
-                <p className="mt-1 font-bold text-neutral-900 dark:text-zinc-50">
+                <p className="mt-1 font-bold text-neutral-900">
                   {content.addressCity}
                 </p>
               </div>
             </article>
           </li>
-          <li>
-            <article className="h-full rounded-2xl bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.1)] ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-800">
+          <li className="min-w-0">
+            <article className="flex aspect-square flex-col rounded-2xl border border-zinc-100 bg-white p-6">
               <Clock
-                className="size-8"
+                className="size-8 shrink-0"
                 style={{ color: accent }}
                 strokeWidth={1.75}
                 aria-hidden
@@ -180,7 +180,7 @@ export function ContactPageContent({ content }: Props) {
               <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-zinc-500">
                 {content.cardHoursLabel}
               </p>
-              <p className="mt-2 font-bold text-neutral-900 dark:text-zinc-50">
+              <p className="mt-2 font-bold text-neutral-900">
                 {content.hours}
               </p>
             </article>
@@ -195,7 +195,7 @@ export function ContactPageContent({ content }: Props) {
             >
               {content.socialSectionTitle}
             </h2>
-            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="mt-2 text-sm text-zinc-600">
               {content.socialSectionSubtitle}
             </p>
             <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -203,18 +203,18 @@ export function ContactPageContent({ content }: Props) {
                 const BrandIcon = socialBrandIcons[i] ?? IconInstagram;
                 return (
                   <li key={s.name}>
-                    <div className="flex items-start gap-4 rounded-2xl bg-white p-5 shadow-md ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-800">
+                    <div className="flex items-start gap-4 rounded-2xl border border-zinc-100 bg-white p-5">
                       <div
-                        className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-zinc-50 text-neutral-800 dark:bg-zinc-800 dark:text-zinc-100"
+                        className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-zinc-50 text-neutral-800"
                         aria-hidden
                       >
                         <BrandIcon className="size-6" />
                       </div>
                       <div>
-                        <p className="font-bold text-neutral-900 dark:text-zinc-50">
+                        <p className="font-bold text-neutral-900">
                           {s.name}
                         </p>
-                        <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+                        <p className="mt-1 text-sm text-zinc-500">
                           {s.handle}
                         </p>
                       </div>
@@ -232,7 +232,7 @@ export function ContactPageContent({ content }: Props) {
             >
               {content.formTitle}
             </h2>
-            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="mt-2 text-sm text-zinc-600">
               {content.formSubtitle}
             </p>
             <form
@@ -298,7 +298,7 @@ export function ContactPageContent({ content }: Props) {
           >
             {content.mapTitle}
           </h2>
-          <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+          <p className="mt-2 text-zinc-600">
             {content.mapSubtitle}
           </p>
           <div className="mt-10 max-w-full overflow-hidden rounded-[2.5rem] shadow-lg ring-1 ring-zinc-200 sm:rounded-[3rem] dark:ring-zinc-700">
@@ -369,10 +369,10 @@ export function ContactPageContent({ content }: Props) {
                             : "lg:pl-4 lg:text-left"
                         }`}
                       >
-                        <h3 className="text-xl font-bold text-neutral-900 dark:text-zinc-50">
+                        <h3 className="text-xl font-bold text-neutral-900">
                           {block.title}
                         </h3>
-                        <p className="text-base leading-relaxed text-neutral-800 dark:text-zinc-300">
+                        <p className="text-base leading-relaxed text-neutral-800">
                           {block.body}
                         </p>
                       </div>
