@@ -1,0 +1,1473 @@
+import type { Locale } from "@/lib/i18n/config";
+
+export type Messages = {
+  nav: {
+    home: string;
+    aboutAlmaty: string;
+    news: string;
+    symbol: string;
+    brand: string;
+    contact: string;
+  };
+  header: {
+    logoHome: string;
+    mainNav: string;
+    mobileNav: string;
+    openMenu: string;
+    closeMenu: string;
+  };
+  footer: {
+    brandWordmark: string;
+    slogan: string;
+    navTitle: string;
+    contactTitle: string;
+    socialTitle: string;
+    phone: string;
+    email: string;
+    location: string;
+    rightsReserved: string;
+    socialFacebook: string;
+    socialInstagram: string;
+    socialYoutube: string;
+    socialTiktok: string;
+  };
+  hero: {
+    titleHighlight: string;
+    titleRest: string;
+    subtitle: string;
+    hotlineTitle: string;
+    hotlinePhone: string;
+    hotlineHours: string;
+    picksTitle: string;
+    pickEventsCaption: string;
+    pickMuseumsCaption: string;
+    moreDetails: string;
+    sliderNavLabel: string;
+    slideButtonAria: string;
+    slider: Array<{ title: string; description: string; alt: string }>;
+  };
+  peaks: {
+    title: string;
+    subtitle: string;
+    seeAll: string;
+    moreDetails: string;
+    cards: [
+      {
+        imageLabel: string;
+        title: string;
+        description: string;
+        alt: string;
+      },
+      {
+        imageLabel: string;
+        title: string;
+        description: string;
+        alt: string;
+      },
+      {
+        imageLabel: string;
+        title: string;
+        description: string;
+        alt: string;
+      },
+    ];
+  };
+  newsPreview: {
+    title: string;
+    subtitle: string;
+    seeAll: string;
+    items: [
+      { date: string; headline: string; alt: string },
+      { date: string; headline: string; alt: string },
+      { date: string; headline: string; alt: string },
+    ];
+  };
+  gallery: {
+    title: string;
+    hint: string;
+    alts: [string, string, string, string];
+  };
+  cta: {
+    title: string;
+    description: string;
+    button: string;
+  };
+  contact: {
+    title: string;
+    intro: string;
+    responseTime: string;
+    responseHint: string;
+    extra: string;
+    name: string;
+    namePh: string;
+    email: string;
+    message: string;
+    messagePh: string;
+    submit: string;
+    sent: string;
+  };
+  contactPage: {
+    heroTitle: string;
+    heroSubtitle: string;
+    heroImageAlt: string;
+    cardPhoneLabel: string;
+    phones: string[];
+    cardEmailLabel: string;
+    email: string;
+    cardAddressLabel: string;
+    addressStreet: string;
+    addressCity: string;
+    addressMapUrl: string;
+    cardHoursLabel: string;
+    hours: string;
+    socialSectionTitle: string;
+    socialSectionSubtitle: string;
+    socialCards: Array<{ name: string; handle: string }>;
+    formTitle: string;
+    formSubtitle: string;
+    formNamePh: string;
+    formEmailPh: string;
+    formMessagePh: string;
+    formSubmit: string;
+    formSent: string;
+    mapTitle: string;
+    mapSubtitle: string;
+    mapEmbedTitle: string;
+    newcomerTitle: string;
+    newcomerBlocks: Array<{
+      title: string;
+      body: string;
+      slideAlts: string[];
+    }>;
+  };
+  aboutAlmatyPage: {
+    heroTitle: string;
+    heroSubtitle: string;
+    heroImageAlt: string;
+    geography: { title: string; description: string };
+    population: { title: string; description: string };
+    history: { title: string; description: string };
+    nature: { title: string; description: string };
+    sliderPrev: string;
+    sliderNext: string;
+    sliderDotAria: string;
+    storyBlocks: Array<{
+      title: string;
+      paragraphs: string[];
+      slideAlts: string[];
+    }>;
+  };
+  symbolPage: {
+    heroTitle: string;
+    heroSubtitle: string;
+    heroImageAlt: string;
+    sliderPrev: string;
+    sliderNext: string;
+    sliderDotAria: string;
+    storyBlocks: Array<{
+      title: string;
+      paragraphs: string[];
+      slideAlts: string[];
+    }>;
+  };
+  brandPage: {
+    heroTitle: string;
+    heroSubtitle: string;
+    heroImageAlt: string;
+    identityTitle: string;
+    identityBody: string;
+    logoConceptTitle: string;
+    logoConceptParagraphs: string[];
+    logoLockupAlt: string;
+    iconLabelMountains: string;
+    iconLabelApple: string;
+    iconLabelYurt: string;
+    iconLabelAla: string;
+    paletteTitle: string;
+    colorHexLabel: string;
+    colorRgbLabel: string;
+    colors: Array<{
+      name: string;
+      hex: string;
+      rgb: string;
+      role: string;
+    }>;
+    typographyTitle: string;
+    typographyPrimaryBadge: string;
+    typographySecondaryBadge: string;
+    typographyPrimaryDescription: string;
+    typographySecondaryDescription: string;
+    typographySecondaryWeights: string;
+    fontPreviewSample: string;
+  };
+  newsPage: {
+    heroTitle: string;
+    heroSubtitle: string;
+    heroImageAlt: string;
+    searchPlaceholder: string;
+    searchAriaLabel: string;
+    categoriesToolbarAria: string;
+    featuredTitle: string;
+    emptyFiltered: string;
+    allNewsTitle: string;
+    /** Подстановка: `{n}` — число новостей в ленте */
+    newsCountLabel: string;
+    readMore: string;
+    loadMore: string;
+    newsletterTitle: string;
+    newsletterSubtitle: string;
+    newsletterPlaceholder: string;
+    newsletterSubmit: string;
+    newsletterEmailAria: string;
+    newsletterImageAlt: string;
+    categories: Array<{ id: string; label: string }>;
+    articles: Array<{
+      categoryId: string;
+      date: string;
+      dateIso: string;
+      title: string;
+      excerpt: string;
+      imageAlt: string;
+    }>;
+  };
+  subpages: {
+    aboutAlmatyTitle: string;
+    newsTitle: string;
+    newsBody: string;
+    symbolTitle: string;
+    symbolBody: string;
+    brandTitle: string;
+    brandBody: string;
+  };
+  a11y: {
+    /** Короткая подсказка у режима контраста */
+    contrastHint: string;
+    /** aria для старого переключателя — сохранено для совместимости */
+    contrastToggle: string;
+    panelTitle: string;
+    panelIntro: string;
+    panelOpen: string;
+    panelClose: string;
+    skipToContent: string;
+    fontSizeLabel: string;
+    fontNormal: string;
+    fontLarge: string;
+    fontXLarge: string;
+    spacingLabel: string;
+    spacingNormal: string;
+    spacingRelaxed: string;
+    underlineLabel: string;
+    underlineHint: string;
+    enhancedFocusLabel: string;
+    enhancedFocusHint: string;
+    contrastLabel: string;
+    resetLabel: string;
+    prefsReset: string;
+  };
+};
+
+const ru: Messages = {
+  nav: {
+    home: "Главная",
+    aboutAlmaty: "О Алматы",
+    news: "Новости",
+    symbol: "Символ",
+    brand: "Бренд",
+    contact: "Контакты",
+  },
+  header: {
+    logoHome: "На главную",
+    mainNav: "Основное меню",
+    mobileNav: "Мобильное меню",
+    openMenu: "Открыть меню",
+    closeMenu: "Закрыть меню",
+  },
+  footer: {
+    brandWordmark: "ALMATY",
+    slogan: "Культурная и деловая столица Казахстана",
+    navTitle: "Навигация",
+    contactTitle: "Контакты",
+    socialTitle: "Социальные сети",
+    phone: "+7 (727) 272-62-62",
+    email: "info@almaty.kz",
+    location: "Алматы, Казахстан",
+    rightsReserved: "Все права защищены.",
+    socialFacebook: "Facebook",
+    socialInstagram: "Instagram",
+    socialYoutube: "YouTube",
+    socialTiktok: "TikTok",
+  },
+  hero: {
+    titleHighlight: "АЛМАТЫ:",
+    titleRest: "ВОСТОРГ В КАЖДОМ МГНОВЕНИИ",
+    subtitle:
+      "Откройте для себя богатую историю, яркую культуру и захватывающую дух природу",
+    hotlineTitle: "Горячая линия для туристов",
+    hotlinePhone: "+7 (727) 555-01-01",
+    hotlineHours: "Ежедневно: 09:00 – 21:00",
+    picksTitle: "Подборки недели",
+    pickEventsCaption: "Мероприятия (6–11 апреля)",
+    pickMuseumsCaption: "Топ 5 музеев",
+    moreDetails: "Подробнее",
+    sliderNavLabel: "Слайды главного блока",
+    slideButtonAria: "Слайд {n} из {total}",
+    slider: [
+      {
+        title: "Медеу",
+        description: "Самый высокогорный каток в мире",
+        alt: "Каток Медеу зимой в горах",
+      },
+      {
+        title: "Кок-Тобе",
+        description: "Панорама города и гор с высоты",
+        alt: "Вид на Алматы с Кок-Тобе",
+      },
+      {
+        title: "Большое Алматинское озеро",
+        description: "Горное озеро в национальном парке",
+        alt: "Горное озеро среди скал",
+      },
+      {
+        title: "Зелёный базар",
+        description: "Колорит, вкусы и атмосфера города",
+        alt: "Торговые ряды Зелёного базара",
+      },
+      {
+        title: "Парк 28 панфиловцев",
+        description: "История, память и зелёная зона",
+        alt: "Аллея в центральном парке",
+      },
+    ],
+  },
+  peaks: {
+    title: "Покоряйте вершины",
+    subtitle: "Ваш гид по горным маршрутам",
+    seeAll: "Смотреть все",
+    moreDetails: "Подробнее",
+    cards: [
+      {
+        imageLabel: "Пик Кок-Жайлау",
+        title: "Кок-Жайлау",
+        description:
+          "Самый живописный и доступный маршрут с панорамным видом на весь город.",
+        alt: "Панорама горного маршрута Кок-Жайлау",
+      },
+      {
+        imageLabel: "Большой Алматинский Пик",
+        title: "БАП",
+        description:
+          "Величественная пирамида, возвышающаяся над Большим Алматинским озером.",
+        alt: "Большой Алматинский пик над озером",
+      },
+      {
+        imageLabel: "Шымбулак",
+        title: "Горнолыжный курорт",
+        description:
+          "Высокогорный курорт с современной канатной дорогой и лучшим сервисом в горах.",
+        alt: "Горнолыжный курорт Шымбулак",
+      },
+    ],
+  },
+  newsPreview: {
+    title: "Новости",
+    subtitle: "Последние события города",
+    seeAll: "Больше новостей",
+    items: [
+      {
+        date: "12 апреля 2026",
+        headline: "Открытие нового культурного центра в Алматы",
+        alt: "Деревянное здание культурного центра",
+      },
+      {
+        date: "21 апреля 2026",
+        headline: "Фестиваль яблок пройдет в мае этого года",
+        alt: "Парк с яблонями и зеленью",
+      },
+      {
+        date: "10 апреля 2026",
+        headline: "Обновление горных маршрутов в Заилийском Алатау",
+        alt: "Горные вершины и лес",
+      },
+    ],
+  },
+  gallery: {
+    title: "Галерея по макету",
+    hint:
+      "Замените URL на локальные файлы: положите картинки в public/landing/ и укажите /landing/имя.jpg.",
+    alts: ["Офис 1", "Офис 2", "Команда", "Встреча"],
+  },
+  cta: {
+    title: "Откройте для себя Алматы",
+    description:
+      "Исследуйте символы, культуру и историю города, который продолжает вдохновлять",
+    button: "Символы города",
+  },
+  contact: {
+    title: "Контакты",
+    intro:
+      "Форма-заглушка: подключите отправку на бэкенд или сервис по мере готовности.",
+    responseTime: "Время ответа",
+    responseHint: "Обычно в течение одного рабочего дня.",
+    extra: "Телефон, мессенджеры и т.д. — вставьте из макета блока контактов.",
+    name: "Имя",
+    namePh: "Как к вам обращаться",
+    email: "Email",
+    message: "Сообщение",
+    messagePh: "Кратко опишите задачу",
+    submit: "Отправить",
+    sent: "Сообщение записано (демо). Подключите API для реальной отправки.",
+  },
+  contactPage: {
+    heroTitle: "Контакты",
+    heroSubtitle: "Мы всегда рады вашим вопросам и предложениям",
+    heroImageAlt: "Алматы: Кок-төбе и горы",
+    cardPhoneLabel: "Телефон",
+    phones: ["+7 (727) 272-62-62", "+7 (727) 272-66-22"],
+    cardEmailLabel: "Email",
+    email: "info@almaty.kz",
+    cardAddressLabel: "Адрес",
+    addressStreet: "Жандосова 55",
+    addressCity: "Алматы 050000",
+    addressMapUrl:
+      "https://www.google.com/maps/search/?api=1&query=%D0%96%D0%B0%D0%BD%D0%B4%D0%BE%D1%81%D0%BE%D0%B2%D0%B0+55%2C+%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B",
+    cardHoursLabel: "Режим работы",
+    hours: "Пн–Пт: 9:00 – 18:00",
+    socialSectionTitle: "Мы в соцсетях",
+    socialSectionSubtitle:
+      "Следите за новостями и событиями города в социальных сетях",
+    socialCards: [
+      { name: "Instagram", handle: "@myalmaty" },
+      { name: "Facebook", handle: "/myalmaty" },
+      { name: "YouTube", handle: "My Almaty" },
+      { name: "TikTok", handle: "@myalmaty" },
+    ],
+    formTitle: "Напишите нам",
+    formSubtitle:
+      "Заполните форму ниже, и мы свяжемся с вами в ближайшее время",
+    formNamePh: "Ваше имя",
+    formEmailPh: "your@email.com",
+    formMessagePh: "Ваше сообщение…",
+    formSubmit: "Отправить",
+    formSent:
+      "Сообщение отправлено (демо). Подключите API для реальной отправки.",
+    mapTitle: "Как нас найти",
+    mapSubtitle: "Центральный офис в самом сердце города",
+    mapEmbedTitle: "Карта: офис на Жандосова 55",
+    newcomerTitle: "Must Have для новичка в Алматы",
+    newcomerBlocks: [
+      {
+        title: "Транспорт",
+        body: "Оплата проезда в автобусах — через приложение Onay (QR — 120 ₸, наличные не принимаются). В метро — карта Onay, банковская карта или жетон. Часы работы: автобусы с 06:00 до 23:00, метро с 06:20 до 00:00. Для такси удобен Яндекс Go, маршруты — приложение 2ГИС.",
+        slideAlts: ["Автобус", "Карта Onay", "Поезд метро"],
+      },
+      {
+        title: "Оплата и деньги",
+        body: "Карты и Apple/Google Pay работают почти везде. Наличные тенге нужны разве что на рынках и в поездках в горы; обменять валюту можно в любом обменном пункте города.",
+        slideAlts: ["Банковские карты", "Тенге", "Оплата телефоном"],
+      },
+      {
+        title: "Связь",
+        body: "SIM-карты (Izi, Tele2, Beeline) оформляют в ТЦ по паспорту. В городе есть 5G, в горах связь часто пропадает — лучше заранее скачать офлайн-карты.",
+        slideAlts: ["Смартфон и Wi‑Fi", "SIM-карта", "5G"],
+      },
+      {
+        title: "Лайфхак",
+        body: "Главный ориентир Алматы: горы всегда на юге. «Вверх» — к горам, «Вниз» — от гор; адреса и маршруты строятся с этой логикой.",
+        slideAlts: ["Кок-төбе", "Парк", "Таулар"],
+      },
+    ],
+  },
+  aboutAlmatyPage: {
+    heroTitle: "О АЛМАТЫ",
+    heroSubtitle:
+      "Город яблок, культуры и величественных гор",
+    heroImageAlt: "Панорама Алматы с горами Заилийского Алатау",
+    geography: {
+      title: "География",
+      description:
+        "Крупнейший город Казахстана на юго-востоке страны",
+    },
+    population: {
+      title: "Население",
+      description:
+        "Более 2 миллионов жителей и множество культур",
+    },
+    history: {
+      title: "История",
+      description: "Основан в 1854 году как крепость Верный",
+    },
+    nature: {
+      title: "Природа",
+      description: "Окружен горами Заилийского Алатау",
+    },
+    sliderPrev: "Назад",
+    sliderNext: "Вперёд",
+    sliderDotAria: "Слайд {n} из {total}",
+    storyBlocks: [
+      {
+        title: "Сердце яблоневого края",
+        paragraphs: [
+          "Название «Алматы» связывают со словом «алма» — яблоко. Город по праву считается символом яблоневого края и местом, где сохраняют память о диких яблонях и садах региона.",
+          "В парках и аллеях растут сорта, которые стали частью культурного кода: от весеннего цветения до осеннего сбора урожая — яблоко здесь не только фрукт, но и образ города.",
+        ],
+        slideAlts: [
+          "Яблони в горах",
+          "Созревшие яблоки",
+          "Панорама гор и долины",
+        ],
+      },
+      {
+        title: "У подножия величественных гор",
+        paragraphs: [
+          "Алматы раскинулся у северного склона Заилийского Алатау: снежные вершины видны почти из любой точки, а воздух гор задаёт ритм прогулок и отдыха.",
+          "Недалеко — Медеу и Шымбулак: горные курорты и трассы, куда поднимаются за свежим воздухом, катанием и видами на город и хребет.",
+        ],
+        slideAlts: [
+          "Долина с юртами и лошадьми",
+          "Горные луга",
+          "Горный пейзаж",
+        ],
+      },
+      {
+        title: "Уникальный ритм жизни",
+        paragraphs: [
+          "В Алматы привыкли ориентироваться не только по сторонам света, но и «вверх» — к горам, и «вниз» — к центру и равнине.",
+          "Фразы «вверх» и «вниз» звучат в разговоре и навигации так же естественно, как названия улиц.",
+          "Такой ритм связывает город с рельефом и делает передвижение понятным гостю с первого дня.",
+        ],
+        slideAlts: [
+          "Вид на Алматы и горы",
+          "Город у подножия хребта",
+          "Панорама города",
+        ],
+      },
+    ],
+  },
+  symbolPage: {
+    heroTitle: "СИМВОЛЫ АЛМАТЫ",
+    heroSubtitle:
+      "Знаки и образы, которые определяют уникальность южной столицы",
+    heroImageAlt: "Долина у гор с юртой и радугой",
+    sliderPrev: "Назад",
+    sliderNext: "Вперёд",
+    sliderDotAria: "Слайд {n} из {total}",
+    storyBlocks: [
+      {
+        title: "Величественные горы Заилийского Алатау",
+        paragraphs: [
+          "Горы Заилийского Алатау всегда были защитными объятиями Алматы. Они вдохновляют на приключения, формируют наш горизонт и напоминают о величии природы.",
+          "Этот мощный ландшафт формирует наш характер: смелый, стойкий и всегда стремящийся к новым вершинам.",
+        ],
+        slideAlts: [
+          "Снежные вершины Заилийского Алатау",
+          "Хвойный лес и горные склоны",
+          "Панорама хребта на закате",
+        ],
+      },
+      {
+        title: "Алматинский апорт",
+        paragraphs: [
+          "На протяжении веков долины Алматы были покрыты дикими яблонями — Malus sieversii — предком всех современных культурных яблок. Это природное наследие дало городу его название и стало частью его идентичности.",
+          "Яблоко символизирует не только наше сельскохозяйственное прошлое, но и способность развиваться, взращивать инновации и делиться своими плодами с миром.",
+        ],
+        slideAlts: [
+          "Спелые алматинские апорты",
+          "Яблоки на ветке",
+          "Яблоневый сад в горах",
+        ],
+      },
+      {
+        title: "Очаг единства — Юрта",
+        paragraphs: [
+          "Юрта — это символ нашего гостеприимного дома под открытым небом. Её круглая форма напоминает солнце, а купол — чистое небо, создавая пространство, где каждый гость чувствует себя уютно и под защитой.",
+          "Этот символ отражает душу Алматы: наше тепло, уважение к традициям и открытость всему миру. Шанырак юрты объединяет нас под общим горизонтом, напоминая о важности семьи и родного очага.",
+        ],
+        slideAlts: [
+          "Юрта на фоне леса в сумерках",
+          "Традиционная казахская юрта в степи",
+          "Детали шанырака и каркаса юрты",
+        ],
+      },
+    ],
+  },
+  brandPage: {
+    heroTitle: "БРЕНД АЛМАТЫ",
+    heroSubtitle:
+      "Визуальная идентичность города, отражающая его уникальный характер и дух",
+    heroImageAlt: "Алматы ночью: огни города и снежные горы",
+    identityTitle: "Идентичность",
+    identityBody:
+      "Бренд Алматы — это отражение многовековой истории, культурного богатства и природной красоты города. Каждый элемент визуальной идентичности несёт глубокий смысл и рассказывает уникальную историю южной столицы Казахстана.",
+    logoConceptTitle: "Концепция логотипа",
+    logoConceptParagraphs: [
+      "Треугольные формы гор создают абстрактную букву «ALA», символизируя как Алматы, так и горный ландшафт, формирующий наш силуэт.",
+      "Внизу форма яблока закрепляет знак — три перекрывающихся круга создают органичную композицию, отражающую наше наследие как родины яблок.",
+      "Стебель и лист добавляют природный акцент, сохраняя при этом геометрическую чистоту. Дизайн получился смелым, запоминающимся и универсальным для любого масштаба и применения.",
+    ],
+    logoLockupAlt: "Знак Алматы: яблоко с силуэтом гор и надписью ALMATY",
+    iconLabelMountains: "MOUNTAINS",
+    iconLabelApple: "APPLE",
+    iconLabelYurt: "YURT",
+    iconLabelAla: "ALMATY",
+    paletteTitle: "Цветовая палитра",
+    colorHexLabel: "HEX",
+    colorRgbLabel: "RGB",
+    colors: [
+      {
+        name: "ALMATY BLUE",
+        hex: "#0062D2",
+        rgb: "(0, 98, 210)",
+        role: "Primary Brand Color",
+      },
+      {
+        name: "NATURE GREEN",
+        hex: "#579C04",
+        rgb: "(87, 156, 4)",
+        role: "Secondary Brand Color",
+      },
+      {
+        name: "SKY BLUE",
+        hex: "#A0D9FF",
+        rgb: "(160, 217, 255)",
+        role: "Accent & Backgrounds",
+      },
+      {
+        name: "SUNSHINE YELLOW",
+        hex: "#FACC4F",
+        rgb: "(250, 204, 79)",
+        role: "Highlight & Energy",
+      },
+      {
+        name: "APPLE RED",
+        hex: "#DE2E06",
+        rgb: "(222, 46, 6)",
+        role: "Heritage & Passion",
+      },
+      {
+        name: "EARTH BROWN",
+        hex: "#A1782D",
+        rgb: "(161, 120, 45)",
+        role: "Warmth & Stability",
+      },
+    ],
+    typographyTitle: "Типографика",
+    typographyPrimaryBadge: "PRIMARY TYPEFACE",
+    typographySecondaryBadge: "SECONDARY TYPEFACE",
+    typographyPrimaryDescription:
+      "Применяется в заголовках, крупных текстовых блоках и важных заявлениях. Обеспечивает мощный визуальный акцент.",
+    typographySecondaryDescription:
+      "Основной шрифт набора и интерфейса: тексты, формы, навигация. Гибкая шкала начертаний задаёт иерархию и читаемость.",
+    typographySecondaryWeights:
+      "Regular 400 · Medium 500 · Semibold 600 · Bold 700",
+    fontPreviewSample:
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+  },
+  newsPage: {
+    heroTitle: "НОВОСТИ",
+    heroSubtitle: "Актуальные события и важные объявления города",
+    heroImageAlt: "Панорама Алматы с горами",
+    searchPlaceholder: "Поиск новости...",
+    searchAriaLabel: "Поиск по новостям",
+    categoriesToolbarAria: "Фильтр новостей по категории",
+    featuredTitle: "Главные новости",
+    emptyFiltered: "Нет новостей по выбранным условиям. Измените категорию или запрос.",
+    allNewsTitle: "Все новости",
+    newsCountLabel: "{n} новостей",
+    readMore: "Читать дальше",
+    loadMore: "Загрузить ещё",
+    newsletterTitle: "Будьте в курсе событий",
+    newsletterSubtitle:
+      "Подпишитесь на рассылку и получайте важные новости города первыми",
+    newsletterPlaceholder: "your@mail.com",
+    newsletterSubmit: "Отправить",
+    newsletterEmailAria: "Электронная почта для рассылки",
+    newsletterImageAlt: "Ночной вид на город",
+    categories: [
+      { id: "all", label: "Все" },
+      { id: "culture", label: "Культура" },
+      { id: "events", label: "События" },
+      { id: "tourism", label: "Туризм" },
+      { id: "sport", label: "Спорт" },
+      { id: "urban", label: "Городское развитие" },
+    ],
+    articles: [
+      {
+        categoryId: "culture",
+        date: "12 апреля 2026",
+        dateIso: "2026-04-12",
+        title: "Открытие нового культурного центра в Алматы",
+        excerpt:
+          "В центре города откроется пространство для выставок, лекций и встреч с мастерами. Программа первого сезона уже формируется — следите за анонсами.",
+        imageAlt: "Деревянное здание в традиционном стиле",
+      },
+      {
+        categoryId: "events",
+        date: "10 апреля 2026",
+        dateIso: "2026-04-10",
+        title: "Фестиваль яблок пройдёт в мае этого года",
+        excerpt:
+          "Гостей ждут дегустации, ярмарка местных производителей и концерты на открытых площадках. Подробная программа появится на сайте города.",
+        imageAlt: "Металлическая скульптура яблока на фоне города",
+      },
+      {
+        categoryId: "sport",
+        date: "1 апреля 2026",
+        dateIso: "2026-04-01",
+        title: "Международный марафон соберёт бегунов со всего мира",
+        excerpt:
+          "Трасса пройдёт по ключевым улицам; ожидаются участники из десятков стран. Регистрация и классификация дистанций — на официальном портале забега.",
+        imageAlt: "Марафонцы на старте в городе",
+      },
+      {
+        categoryId: "urban",
+        date: "5 апреля 2026",
+        dateIso: "2026-04-05",
+        title: "Новая линия метро откроется в следующем году",
+        excerpt:
+          "Строительство выходит на финальную стадию: станции получают современные пересадочные узлы и доступную навигацию. График пусковых работ будет уточнён.",
+        imageAlt: "Эскалатор и станция метро",
+      },
+      {
+        categoryId: "culture",
+        date: "3 апреля 2026",
+        dateIso: "2026-04-03",
+        title: "Премьера нового национального балета",
+        excerpt:
+          "Постановка объединяет классический танец и мультимедийное оформление. Билеты поступят в продажу за месяц до первого спектакля.",
+        imageAlt: "Танцовщики балета на сцене",
+      },
+      {
+        categoryId: "tourism",
+        date: "8 апреля 2026",
+        dateIso: "2026-04-08",
+        title: "Новые маршруты для пеших прогулок у подножия Алатау",
+        excerpt:
+          "Обозначены безопасные тропы с указателями и точками отдыха. Карты можно скачать в приложении гостя Алматы.",
+        imageAlt: "Горная тропа и лес",
+      },
+      {
+        categoryId: "urban",
+        date: "1 апреля 2026",
+        dateIso: "2026-04-01",
+        title: "Обновление набережной и освещения вдоль проспекта",
+        excerpt:
+          "Работы идут поэтапно; проезды сохраняются. Сроки завершения — конец лета, о смене схемы движения сообщат заранее.",
+        imageAlt: "Современные здания и дорога в городе",
+      },
+      {
+        categoryId: "sport",
+        date: "5 апреля 2026",
+        dateIso: "2026-04-05",
+        title: "Городской полумарафон: регистрация открыта",
+        excerpt:
+          "Дистанции для разного уровня подготовки, семейный забег и зона поддержки зрителей. Количество мест ограничено.",
+        imageAlt: "Бегуны на городской трассе",
+      },
+      {
+        categoryId: "culture",
+        date: "28 марта 2026",
+        dateIso: "2026-03-28",
+        title: "Летняя сцена в парке: афиша классики и джаза",
+        excerpt:
+          "Вход свободный по предварительной регистрации. Детская программа — по выходным днём.",
+        imageAlt: "Парк с деревьями и сценой",
+      },
+      {
+        categoryId: "events",
+        date: "15 марта 2026",
+        dateIso: "2026-03-15",
+        title: "Фестиваль уличной еды в центре города",
+        excerpt:
+          "Повара представят кухни народов Казахстана и соседних регионов. Вход свободный, зоны отдыха и детская программа на выходных.",
+        imageAlt: "Уличная еда и палатки на площади",
+      },
+      {
+        categoryId: "tourism",
+        date: "20 марта 2026",
+        dateIso: "2026-03-20",
+        title: "Визит-центр для гостей: новые языки экскурсий",
+        excerpt:
+          "Добавлены аудиогиды и групповые туры на английском и китайском. Бронирование онлайн и в мобильном приложении.",
+        imageAlt: "Информационная стойка и карта города",
+      },
+      {
+        categoryId: "sport",
+        date: "25 марта 2026",
+        dateIso: "2026-03-25",
+        title: "Открытие сезона на горном катке «Медеу»",
+        excerpt:
+          "График сеансов и абонементы на весну опубликованы на сайте комплекса. Прогноз погоды учитывается при планировании льда.",
+        imageAlt: "Каток в горах",
+      },
+      {
+        categoryId: "urban",
+        date: "18 марта 2026",
+        dateIso: "2026-03-18",
+        title: "Благоустройство скверов в спальных районах",
+        excerpt:
+          "Появятся освещённые дорожки, детские и спортивные зоны. Жители смогут участвовать в опросе по наполнению площадок.",
+        imageAlt: "Аллея в городском сквере",
+      },
+      {
+        categoryId: "culture",
+        date: "22 марта 2026",
+        dateIso: "2026-03-22",
+        title: "Музей под открытым небом: новая экспозиция",
+        excerpt:
+          "Инсталляции посвящены истории кочевой культуры. Экскурсии с гидом по выходным, вход по билету единого музейного дня.",
+        imageAlt: "Скульптуры под открытым небом",
+      },
+      {
+        categoryId: "tourism",
+        date: "30 марта 2026",
+        dateIso: "2026-03-30",
+        title: "Эко-тропа в Тянь-Шане: ограничение размера групп",
+        excerpt:
+          "Правила введены для сохранения ландшафта. Нужна предварительная регистрация и инструктаж у въезда в зону.",
+        imageAlt: "Горная тропа и снежные вершины",
+      },
+    ],
+  },
+  subpages: {
+    aboutAlmatyTitle: "О Алматы",
+    newsTitle: "Новости",
+    newsBody:
+      "Лента новостей — подключите CMS или статические материалы по готовности.",
+    symbolTitle: "Символ",
+    symbolBody: "Страница символики города — контент с макета.",
+    brandTitle: "Бренд",
+    brandBody: "Гайдлайны и брендбук — разместите материалы по дизайну.",
+  },
+  a11y: {
+    contrastHint: "Усиленный контраст и отключение цветного оформления страницы.",
+    contrastToggle: "Режим для слабовидящих: чёрно-белый контраст",
+    panelTitle: "Версия для слабовидящих",
+    panelIntro:
+      "Настройки сохраняются в этом браузере и применяются ко всем страницам сайта.",
+    panelOpen: "Открыть настройки доступности",
+    panelClose: "Закрыть окно настроек",
+    skipToContent: "Перейти к основному содержимому",
+    fontSizeLabel: "Размер текста",
+    fontNormal: "Обычный",
+    fontLarge: "Крупный",
+    fontXLarge: "Очень крупный",
+    spacingLabel: "Интервал между строками",
+    spacingNormal: "Обычный",
+    spacingRelaxed: "Увеличенный",
+    underlineLabel: "Подчёркивать ссылки",
+    underlineHint: "Ссылки всегда отображаются с подчёркиванием.",
+    enhancedFocusLabel: "Выделение при навигации с клавиатуры",
+    enhancedFocusHint:
+      "Яркая обводка у кнопок и ссылок при переходе клавишей Tab.",
+    contrastLabel: "Режим контраста",
+    resetLabel: "Сбросить настройки",
+    prefsReset: "Все параметры доступности сброшены.",
+  },
+};
+
+const kz: Messages = {
+  nav: {
+    home: "Басты бет",
+    aboutAlmaty: "Алматы туралы",
+    news: "Жаңалықтар",
+    symbol: "Таңба",
+    brand: "Бренд",
+    contact: "Байланыс",
+  },
+  header: {
+    logoHome: "Басты бетке",
+    mainNav: "Негізгі мәзір",
+    mobileNav: "Мобильді мәзір",
+    openMenu: "Мәзірді ашу",
+    closeMenu: "Мәзірді жабу",
+  },
+  footer: {
+    brandWordmark: "ALMATY",
+    slogan: "Қазақстанның мәдени және іскер астанасы",
+    navTitle: "Навигация",
+    contactTitle: "Байланыс",
+    socialTitle: "Әлеуметтік желілер",
+    phone: "+7 (727) 272-62-62",
+    email: "info@almaty.kz",
+    location: "Алматы, Қазақстан",
+    rightsReserved: "Барлық құқықтар қорғалған.",
+    socialFacebook: "Facebook",
+    socialInstagram: "Instagram",
+    socialYoutube: "YouTube",
+    socialTiktok: "TikTok",
+  },
+  hero: {
+    titleHighlight: "АЛМАТЫ:",
+    titleRest: "ӘР СӘТТЕ ҚУАНЫШ",
+    subtitle:
+      "Бай тарихты, құлпыра мәдениет пен таңғажайып табиғатты ашыңыз",
+    hotlineTitle: "Туристерге арналған жедел желі",
+    hotlinePhone: "+7 (727) 555-01-01",
+    hotlineHours: "Күнделікті: 09:00 – 21:00",
+    picksTitle: "Апталық таңдаулар",
+    pickEventsCaption: "Іс-шаралар (6–11 сәуір)",
+    pickMuseumsCaption: "Топ 5 музей",
+    moreDetails: "Толығырақ",
+    sliderNavLabel: "Басты блок слайдтары",
+    slideButtonAria: "{total} ішінен {n}-слайд",
+    slider: [
+      {
+        title: "Медеу",
+        description: "Әлемдегі ең биік таулы мұз айдыны",
+        alt: "Қысқы Медеу мұз айдыны",
+      },
+      {
+        title: "Көк-төбе",
+        description: "Қала мен таулардың панорамасы",
+        alt: "Көк-төбеден көрініс",
+      },
+      {
+        title: "Үлкен Алматы көлі",
+        description: "Ұлттық саябақтағы тау көлі",
+        alt: "Тау көлі",
+      },
+      {
+        title: "Жасыл базар",
+        description: "Қала дәмі мен күйі",
+        alt: "Жасыл базар",
+      },
+      {
+        title: "28 панфиловшылар саябағы",
+        description: "Тарих, еске алу және жасыл аймақ",
+        alt: "Саябақтағы саяжол",
+      },
+    ],
+  },
+  peaks: {
+    title: "Белестерді бағындырыңыз",
+    subtitle: "Тау маршруттары бойынша сіздің гидіңіз",
+    seeAll: "Барын көру",
+    moreDetails: "Толығырақ",
+    cards: [
+      {
+        imageLabel: "Көк-жайлау шыңы",
+        title: "Көк-жайлау",
+        description:
+          "Қалаға панорамалық көрініс беретін ең көркем әрі қолжетімді маршрут.",
+        alt: "Көк-жайлау тау маршруты",
+      },
+      {
+        imageLabel: "Үлкен Алматы шыңы",
+        title: "БАП",
+        description:
+          "Үлкен Алматы көлінен биік көтерілетін ұлы пирамида.",
+        alt: "Үлкен Алматы шыңы мен көл",
+      },
+      {
+        imageLabel: "Шымбұлақ",
+        title: "Шаңғы курорты",
+        description:
+          "Заманауи арқан жолы және таудағы ең жақсы сервисі бар биік тау курорты.",
+        alt: "Шымбұлақ шаңғы курорты",
+      },
+    ],
+  },
+  newsPreview: {
+    title: "Жаңалықтар",
+    subtitle: "Қаладағы соңғы оқиғалар",
+    seeAll: "Қосымша жаңалықтар",
+    items: [
+      {
+        date: "2026 жылғы 12 сәуір",
+        headline: "Алматыда жаңа мәдени орталық ашылды",
+        alt: "Ағаштан салынған мәдени орталық",
+      },
+      {
+        date: "2026 жылғы 21 сәуір",
+        headline: "Алма фестивалі осы жыл мамырында өтеді",
+        alt: "Бақтағы алма ағаштары",
+      },
+      {
+        date: "2026 жылғы 10 сәуір",
+        headline: "Іле Алатауындағы тау маршруттары жаңартылды",
+        alt: "Қарлы таулар мен орман",
+      },
+    ],
+  },
+  gallery: {
+    title: "Макет бойынша галерея",
+    hint:
+      "URL-дерді жергілікті файлдарға ауыстырыңыз: суреттерді public/landing/ қойыңыз және /landing/аты.jpg көрсетіңіз.",
+    alts: ["Кеңсе 1", "Кеңсе 2", "Команда", "Кездесу"],
+  },
+  cta: {
+    title: "Алматыны өзіңіз үшін ашыңыз",
+    description:
+      "Шабыттандыра беретін қаланың таңбаларын, мәдениеті мен тарихын зерттеңіз",
+    button: "Қала таңбалары",
+  },
+  contact: {
+    title: "Байланыс",
+    intro:
+      "Нысана форма: жіберуді бэкенд немесе сервиске дайын болғанда қосыңыз.",
+    responseTime: "Жауап уақыты",
+    responseHint: "Әдетте бір жұмыс күні ішінде.",
+    extra: "Телефон, мессенджерлер т.б. — байланыс блогын макеттен енгізіңіз.",
+    name: "Аты",
+    namePh: "Сізге қалай жүгіну керек",
+    email: "Email",
+    message: "Хабарлама",
+    messagePh: "Тапсырманы қысқаша сипаттаңыз",
+    submit: "Жіберу",
+    sent: "Хабарлама жазылды (демо). Нақты жіберу үшін API қосыңыз.",
+  },
+  contactPage: {
+    heroTitle: "Байланыс",
+    heroSubtitle: "Сұрақтарыңыз бен ұсыныстарыңызға әрқашан қуаныштымыз",
+    heroImageAlt: "Алматы: Көк-төбе мен таулар",
+    cardPhoneLabel: "Телефон",
+    phones: ["+7 (727) 272-62-62", "+7 (727) 272-66-22"],
+    cardEmailLabel: "Email",
+    email: "info@almaty.kz",
+    cardAddressLabel: "Мекенжай",
+    addressStreet: "Жандосов 55",
+    addressCity: "Алматы 050000",
+    addressMapUrl:
+      "https://www.google.com/maps/search/?api=1&query=%D0%96%D0%B0%D0%BD%D0%B4%D0%BE%D1%81%D0%BE%D0%B2%D0%B0+55%2C+%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B",
+    cardHoursLabel: "Жұмыс режимі",
+    hours: "Дс–Жм: 9:00 – 18:00",
+    socialSectionTitle: "Әлеуметтік желілерде",
+    socialSectionSubtitle:
+      "Қаланың жаңалықтары мен іс-шараларын әлеуметтік желілерден қадағалаңыз",
+    socialCards: [
+      { name: "Instagram", handle: "@myalmaty" },
+      { name: "Facebook", handle: "/myalmaty" },
+      { name: "YouTube", handle: "My Almaty" },
+      { name: "TikTok", handle: "@myalmaty" },
+    ],
+    formTitle: "Бізге жазыңыз",
+    formSubtitle:
+      "Төмендегі форманы толтырыңыз, жақын арада сізбен байланысамыз",
+    formNamePh: "Атыңыз",
+    formEmailPh: "your@email.com",
+    formMessagePh: "Хабарламаңыз…",
+    formSubmit: "Жіберу",
+    formSent:
+      "Хабарлама жіберілді (демо). Нақты жіберу үшін API қосыңыз.",
+    mapTitle: "Бізді қалай табуға болады",
+    mapSubtitle: "Қала орталығындағы орталық кеңсе",
+    mapEmbedTitle: "Карта: Жандосов 55 кеңсесі",
+    newcomerTitle: "Алматыға жаңадан келгенге арналған Must Have",
+    newcomerBlocks: [
+      {
+        title: "Көлік",
+        body: "Автобуста жол ақысы Onay қолданбасы арқылы (QR — 120 ₸, қолма-қол ақша қабылданбайды). Метрода — Onay картасы, банк картасы немесе жетон. Жұмыс уақыты: автобустар 06:00–23:00, метро 06:20–00:00. Такси үшін Яндекс Go, бағыттар — 2ГИС қолданбасы.",
+        slideAlts: ["Автобус", "Onay картасы", "Метро пойызы"],
+      },
+      {
+        title: "Төлем және ақша",
+        body: "Карталар мен Apple/Google Pay дерлік бар жерде жұмыс істейді. Қолма-қол теңге көбінесе базарлар мен тау сапарларына қажет; валютаны қаланың кез келген айырбастау пунктінде айырбастауға болады.",
+        slideAlts: ["Банк карталары", "Теңге", "Телефонмен төлем"],
+      },
+      {
+        title: "Байланыс",
+        body: "SIM-карталарды (Izi, Tele2, Beeline) ТРК-да паспортпен рәсімдейді. Қалада 5G бар, тауларда байланыс жиі жоғалады — офлайн карталарды алдын ала жүктеп алыңыз.",
+        slideAlts: ["Смартфон және Wi‑Fi", "SIM-карта", "5G"],
+      },
+      {
+        title: "Лайфхак",
+        body: "Алматының басты бағдары: таулар әрқашан оңтүстікте. «Жоғары» — тауға, «Төмен» — таудан; мекенжайлар мен маршруттар осы логика бойынша құралады.",
+        slideAlts: ["Көк-төбе", "Саябақ", "Таулар"],
+      },
+    ],
+  },
+  aboutAlmatyPage: {
+    heroTitle: "АЛМАТЫ ТУРАЛЫ",
+    heroSubtitle:
+      "Алма, мәдениет пен ұлы таулар қаласы",
+    heroImageAlt: "Іле Алатауының тауларымен Алматы панорамасы",
+    geography: {
+      title: "География",
+      description:
+        "Елдің оңтүстік-шығысында орналасқан Қазақстанның ең ірі қаласы",
+    },
+    population: {
+      title: "Халық",
+      description:
+        "2 миллионнан астам тұрғын және түрлі мәдениеттер",
+    },
+    history: {
+      title: "Тарих",
+      description: "1854 жылы Верный қамалы ретінде құрылған",
+    },
+    nature: {
+      title: "Табиғат",
+      description: "Іле Алатауының тауларымен қоршалған",
+    },
+    sliderPrev: "Артқа",
+    sliderNext: "Алға",
+    sliderDotAria: "{total} ішінен {n}-слайд",
+    storyBlocks: [
+      {
+        title: "Алма өлкесінің жүрегі",
+        paragraphs: [
+          "«Алматы» атауы «алма» сөзіне байланысты — алма. Қала алма өлкесінің белгісі және дикті алма ағаштары мен бау-бақшалар ескерілетін орын.",
+          "Саябақтар мен аллеяларда мәдени кодтың бөлігі болған сорттар өседі: көктемгі гүлденуден күзгі жинаққа дейін — алма мұнда тек жеміс емес, сондай-ақ қаланың бейнесі.",
+        ],
+        slideAlts: [
+          "Таудағы алма ағаштары",
+          "Піскен алмалар",
+          "Таулар мен аңғар панорамасы",
+        ],
+      },
+      {
+        title: "Ұлы таулардың етегінде",
+        paragraphs: [
+          "Алматы Іле Алатауының солтүстік бауырында: қарлы шыңдарды дерлік кез келген жерден көруге болады, тау ауасы серуен мен демалыс ритмін береді.",
+          "Жақын Медеу мен Шымбұлақ: жаңа ауа, шана және қала мен сыртқа көрініс іздеп шығатын тау курорттары.",
+        ],
+        slideAlts: [
+          "Юрта мен жылқылы аңғар",
+          "Таулы жайлаулар",
+          "Тау пейзажы",
+        ],
+      },
+      {
+        title: "Өмірдің бірегей ритмі",
+        paragraphs: [
+          "Алматыда тек төрт бағытқа ғана емес, сондай-ақ «жоғары» — тауға және «төмен» — орталық пен жазыққа қарай бағдарланады.",
+          "«Жоғары» және «төмен» сөздері сөйлесу мен бағдарлауда көше атаулары сияқты табиғи естіледі.",
+          "Мұндай ритм қаланы рельефпен байланыстырады және қонаққа алғашқы күннен түсінікті қозғалыс береді.",
+        ],
+        slideAlts: [
+          "Алматы мен таулардың көрінісі",
+          "Сыртқы тау етегіндегі қала",
+          "Қала панорамасы",
+        ],
+      },
+    ],
+  },
+  symbolPage: {
+    heroTitle: "АЛМАТЫ ТАҢБАЛАРЫ",
+    heroSubtitle:
+      "Оңтүстік астананың бірегейлігін анықтайтын белгілер мен бейнелер",
+    heroImageAlt: "Тау етегіндегі аңғарда юрта мен кемпірқосақ",
+    sliderPrev: "Артқа",
+    sliderNext: "Алға",
+    sliderDotAria: "{total} ішінен {n}-слайд",
+    storyBlocks: [
+      {
+        title: "Іле Алатауының ұлы таулары",
+        paragraphs: [
+          "Іле Алатауының таулары Алматы үшін әрқашан қорғаныш құшақтай болды. Олар шытырман оқиғаға шақырады, көкжиекімізді қалыптастырады және табиғаттың ұлылығын еске салады.",
+          "Бұл күшті ландшафт сипатымызды қалыптастырады: батыл, берік және әрқашан жаңа биіктерге ұмтылатын.",
+        ],
+        slideAlts: [
+          "Іле Алатауының қарлы шыңдары",
+          "Қарағайлы орман мен тау бауыры",
+          "Күн батқандағы сыртқы тау панорамасы",
+        ],
+      },
+      {
+        title: "Алматы аорты",
+        paragraphs: [
+          "Ғасырлар бойы Алматы аңғарлары Malus sieversii — барлық заманауи мәдени алманың ата-бабасы — дикті алма ағаштарымен жабық болды. Бұл табиғи мұра қалаға атын берді және оның өзіндігінің бөлігі болды.",
+          "Алма тек ауыл шаруашылығы өткенімізді ғана емес, сонымен қатар дамуға, инновацияны өсіруге және жемісімізбен әлеммен бөлісуге қабілеттілікті бейнелейді.",
+        ],
+        slideAlts: [
+          "Піскен алматы аорттары",
+          "Бұтадағы алмалар",
+          "Таудағы алма бағы",
+        ],
+      },
+      {
+        title: "Бірлік ошағы — киіз үй",
+        paragraphs: [
+          "Киіз үй ашық аспан астындағы қонақжай үйіміздің таңбасы. Оның дөңгелек пішіні күнге, шаңырағы ашық аспанға ұқсас; әр қонақ жайлы және қорғаныста сезінетін кеңістік жасайды.",
+          "Бұл таңба Алматы жанын бейнелейді: жылуымыз, дәстүрге құрметіміз және бүкіл әлемге ашықтығымыз. Киіз үйдің шаңырағы бізді ортақ көкжиек астында біріктіреді, отбасы мен туған ошақтың маңызын еске салады.",
+        ],
+        slideAlts: [
+          "Орман фонындағы кешке қарай киіз үй",
+          "Даладағы дәстүрлі қазақ киіз үйі",
+          "Шаңырақ пен каркас бөлшектері",
+        ],
+      },
+    ],
+  },
+  brandPage: {
+    heroTitle: "АЛМАТЫ БРЕНДІ",
+    heroSubtitle:
+      "Қаланың бірегей сипаты мен рухын білдіретін визуалды сәйкестік",
+    heroImageAlt: "Түнгі Алматы: қала шамдары мен қарлы таулар",
+    identityTitle: "Сәйкестік",
+    identityBody:
+      "Алматы бренді — қаладың көпғасырлық тарихы, мәдени байлығы мен табиғат сұлулығының көрінісі. Визуалды сәйкестіктің әр элементі терең мағынаға ие және Қазақстанның оңтүстік астанасының бірегей оқиғасын айтады.",
+    logoConceptTitle: "Логотип концепциясы",
+    logoConceptParagraphs: [
+      "Таудың үшбұрышты пішіндері «ALA» әрпінің абстракциясын жасайды — ол Алматы мен сыртқы силуэтімізді қалыптастыратын тау ландшафтын білдіреді.",
+      "Төменде алма пішіні таңбаны бекітеді — үш қиылысқан шеңбер біздің алманың отаны мұрасына сәйкес органикалық композицияны көрсетеді.",
+      "Сабақ пен жапырақ табиғи акцент қосады, геометриялық тазалықты сақтай отырып. Дизайн батыл, есте қалады және кез келген масштаб пен қолдануға бейімделген.",
+    ],
+    logoLockupAlt: "Алматы таңбасы: тау силуэті бар алма және ALMATY жазуы",
+    iconLabelMountains: "ТАУЛАР",
+    iconLabelApple: "АЛМА",
+    iconLabelYurt: "КИІЗ ҮЙ",
+    iconLabelAla: "ALMATY",
+    paletteTitle: "Түстер палитрасы",
+    colorHexLabel: "HEX",
+    colorRgbLabel: "RGB",
+    colors: [
+      {
+        name: "ALMATY BLUE",
+        hex: "#0062D2",
+        rgb: "(0, 98, 210)",
+        role: "Негізгі бренд түсі",
+      },
+      {
+        name: "NATURE GREEN",
+        hex: "#579C04",
+        rgb: "(87, 156, 4)",
+        role: "Қосымша бренд түсі",
+      },
+      {
+        name: "SKY BLUE",
+        hex: "#A0D9FF",
+        rgb: "(160, 217, 255)",
+        role: "Акцент және фондар",
+      },
+      {
+        name: "SUNSHINE YELLOW",
+        hex: "#FACC4F",
+        rgb: "(250, 204, 79)",
+        role: "Ерекшелеу және энергия",
+      },
+      {
+        name: "APPLE RED",
+        hex: "#DE2E06",
+        rgb: "(222, 46, 6)",
+        role: "Мұра және құштарлық",
+      },
+      {
+        name: "EARTH BROWN",
+        hex: "#A1782D",
+        rgb: "(161, 120, 45)",
+        role: "Жылу және тұрақтылық",
+      },
+    ],
+    typographyTitle: "Типография",
+    typographyPrimaryBadge: "PRIMARY TYPEFACE",
+    typographySecondaryBadge: "SECONDARY TYPEFACE",
+    typographyPrimaryDescription:
+      "Тақырыптар, ірі мәтіндік блоктар және маңызды мәлімдемелер үшін қолданылады. Күшті визуалды акцент береді.",
+    typographySecondaryDescription:
+      "Негізгі мәтін мен интерфейс: материалдар, формалар, навигация. Бастау түрлерінің икемді шкаласы иерархия мен оқылуды қамтамасыз етеді.",
+    typographySecondaryWeights:
+      "Regular 400 · Medium 500 · Semibold 600 · Bold 700",
+    fontPreviewSample:
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+  },
+  newsPage: {
+    heroTitle: "ЖАҢАЛЫҚТАР",
+    heroSubtitle: "Қаланың өзекті оқиғалары мен маңызды хабарландырулары",
+    heroImageAlt: "Таумен Алматы панорамасы",
+    searchPlaceholder: "Жаңалық іздеу...",
+    searchAriaLabel: "Жаңалықтар бойынша іздеу",
+    categoriesToolbarAria: "Санат бойынша жаңалықтар сүзгісі",
+    featuredTitle: "Басты жаңалықтар",
+    emptyFiltered:
+      "Таңдалған шарттар бойынша жаңалық жоқ. Санатты немесе сұрауды өзгертіңіз.",
+    allNewsTitle: "Барлық жаңалықтар",
+    newsCountLabel: "{n} жаңалық",
+    readMore: "Толығырақ оқу",
+    loadMore: "Тағы жүктеу",
+    newsletterTitle: "Оқиғалардан хабардар болыңыз",
+    newsletterSubtitle:
+      "Хабарламаны жазылып, қаланың маңызды жаңалықтарын бірінші болып алыңыз",
+    newsletterPlaceholder: "your@mail.com",
+    newsletterSubmit: "Жіберу",
+    newsletterEmailAria: "Хабарлама үшін электрондық пошта",
+    newsletterImageAlt: "Түнгі қала көрінісі",
+    categories: [
+      { id: "all", label: "Барлығы" },
+      { id: "culture", label: "Мәдениет" },
+      { id: "events", label: "Іс-шаралар" },
+      { id: "tourism", label: "Туризм" },
+      { id: "sport", label: "Спорт" },
+      { id: "urban", label: "Қала дамуы" },
+    ],
+    articles: [
+      {
+        categoryId: "culture",
+        date: "2026 жылғы 12 сәуір",
+        dateIso: "2026-04-12",
+        title: "Алматыда жаңа мәдени орталық ашылады",
+        excerpt:
+          "Қала орталығында көрме, дәріс пен шеберлермен кездесу алаңы ашылады. Бірінші маусым бағдарламасы қалыптасуда — хабарландыруларды күтіңіз.",
+        imageAlt: "Дәстүрлі стильдегі ағаш үй",
+      },
+      {
+        categoryId: "events",
+        date: "2026 жылғы 10 сәуір",
+        dateIso: "2026-04-10",
+        title: "Алма фестивалі осы жылдың мамырында өтеді",
+        excerpt:
+          "Қонақтарды дегустация, жергілікті өндірушілер жәрмеңкесі және ашық алаңдағы концерттер күтеді. Толық бағдарлама қалалық сайтта жарияланады.",
+        imageAlt: "Қала фонындағы алма мүсіні",
+      },
+      {
+        categoryId: "sport",
+        date: "2026 жылғы 1 сәуір",
+        dateIso: "2026-04-01",
+        title: "Халықаралық марафон әлемнің түкпір-түкпірінен жүгіргендерді жинайды",
+        excerpt:
+          "Трасса негізгі көшелер бойынша өтеді; ондаған елден қатысушылар күтіледі. Тіркеу мен қашықтық кластары ресми порталда.",
+        imageAlt: "Қалада стартта тұрған марафоншылар",
+      },
+      {
+        categoryId: "urban",
+        date: "2026 жылғы 5 сәуір",
+        dateIso: "2026-04-05",
+        title: "Жаңа метро желісі келесі жылы ашылады",
+        excerpt:
+          "Салу соңғы сатыға шықты: станцияларға заманауи ауысым түйіндері мен қолжетімді бағдарлама қойылады. Іске қосу кестесі нақтыланады.",
+        imageAlt: "Метро станциясы мен эскалатор",
+      },
+      {
+        categoryId: "culture",
+        date: "2026 жылғы 3 сәуір",
+        dateIso: "2026-04-03",
+        title: "Жаңа ұлттық балет премьерасы",
+        excerpt:
+          "Қойылым классикалық би мен мультимедианы біріктіреді. Билеттер алғашқы спектакльге бір ай қалғанда сатылады.",
+        imageAlt: "Сахнада балет бишілері",
+      },
+      {
+        categoryId: "tourism",
+        date: "2026 жылғы 8 сәуір",
+        dateIso: "2026-04-08",
+        title: "Алатау етегінде жаңа жаяу серуен маршруттары",
+        excerpt:
+          "Көрсеткіштер мен демалыс нүктелері бар қауіпсіз соқалар белгіленді. Карталарды Алматы қонақ қосымшасынан жүктеуге болады.",
+        imageAlt: "Тау соқасы мен орман",
+      },
+      {
+        categoryId: "urban",
+        date: "2026 жылғы 1 сәуір",
+        dateIso: "2026-04-01",
+        title: "Дамып жатқан даңғыл бойындағы жағажай мен жарықтандыру жаңартуы",
+        excerpt:
+          "Жұмыс кезең-кезеңмен жүргізіледі; өту жолдары сақталады. Аяқталу мерзімі — жаздың соңы, қозғалыс схемасы туралы алдын ала хабарланады.",
+        imageAlt: "Қазіргі ғимараттар мен қала жолы",
+      },
+      {
+        categoryId: "sport",
+        date: "2026 жылғы 5 сәуір",
+        dateIso: "2026-04-05",
+        title: "Қалалық жартылай марафон: тіркелу ашық",
+        excerpt:
+          "Дайындық деңгейіне қарай қашықтықтар, отбасылық жүгіру және көрермендер қолдау аймағы. Орындар шектеулі.",
+        imageAlt: "Қала трассында жүгіргендер",
+      },
+      {
+        categoryId: "culture",
+        date: "2026 жылғы 28 наурыз",
+        dateIso: "2026-03-28",
+        title: "Саябақтағы жазғы сахна: классика мен джаз афишасы",
+        excerpt:
+          "Кіру алдын ала тіркеу арқылы тегін. Балалар бағдарламасы — демалыс күндері.",
+        imageAlt: "Ағаштар мен сахнасы бар саябақ",
+      },
+      {
+        categoryId: "events",
+        date: "2026 жылғы 15 наурыз",
+        dateIso: "2026-03-15",
+        title: "Қала орталығындағы көше тағамдары фестивалі",
+        excerpt:
+          "Аспаздар Қазақстан мен көршілес аймақтар асханаларын ұсынады. Кіру тегін, демалыс аймақтары мен балалар бағдарламасы бар.",
+        imageAlt: "Алаңдағы тағам павильондары",
+      },
+      {
+        categoryId: "tourism",
+        date: "2026 жылғы 20 наурыз",
+        dateIso: "2026-03-20",
+        title: "Қонақтар орталығы: экскурсияның жаңа тілдері",
+        excerpt:
+          "Ағылшын және қытай тілдерінде аудиогид пен топтық турлар қосылды. Онлайн және мобильді қосымшада брондау.",
+        imageAlt: "Ақпараттық стенд және қала картасы",
+      },
+      {
+        categoryId: "sport",
+        date: "2026 жылғы 25 наурыз",
+        dateIso: "2026-03-25",
+        title: "«Медеу» таулы мұз айдынында маусымның ашылуы",
+        excerpt:
+          "Сеанс кестесі мен жазғы абонементтер кешен сайтында. Мұз жоспарлауға ауа райы ескеріледі.",
+        imageAlt: "Таудағы мұз айдыны",
+      },
+      {
+        categoryId: "urban",
+        date: "2026 жылғы 18 наурыз",
+        dateIso: "2026-03-18",
+        title: "Тұрғын аудандардағы скверлерді жақсарту",
+        excerpt:
+          "Жарықтандырылған жолдар, балалар және спорт алаңдары пайда болады. Тұрғындар алаңдарды толтыру бойынша сауалнамаға қатыса алады.",
+        imageAlt: "Қалалық сквердегі аллея",
+      },
+      {
+        categoryId: "culture",
+        date: "2026 жылғы 22 наурыз",
+        dateIso: "2026-03-22",
+        title: "Ашық аспан астындағы музей: жаңа экспозиция",
+        excerpt:
+          "Инсталляциялар көшпелі мәдениет тарихына арналған. Сенбі-жексенбі гидпен экскурсиялар, кіру бір күндік музей билетімен.",
+        imageAlt: "Ашық аспан астындағы мүсіндер",
+      },
+      {
+        categoryId: "tourism",
+        date: "2026 жылғы 30 наурыз",
+        dateIso: "2026-03-30",
+        title: "Тянь-Шаньдағы эко-соқа: топ өлшемін шектеу",
+        excerpt:
+          "Ландшафтты сақтау үшін ережелер енгізілді. Кіру алдын ала тіркеу және кіру аймағында нұсқау қажет.",
+        imageAlt: "Тау соқасы және қарлы шыңдар",
+      },
+    ],
+  },
+  subpages: {
+    aboutAlmatyTitle: "Алматы туралы",
+    newsTitle: "Жаңалықтар",
+    newsBody:
+      "Жаңалықтар лентасы — CMS немесе статикалық материалдарды дайын болғанда қосыңыз.",
+    symbolTitle: "Таңба",
+    symbolBody: "Қала символикасының беті — макеттегі контент.",
+    brandTitle: "Бренд",
+    brandBody: "Гайдлайн мен брендбук — дизайн бойынша орналастырыңыз.",
+  },
+  a11y: {
+    contrastHint:
+      "Контрастты күшейту және беттің түсті безендіруін өшіру.",
+    contrastToggle: "Нашар көретіндер режимі: ақ-қара контраст",
+    panelTitle: "Нашар көретіндерге арналған нұсқа",
+    panelIntro:
+      "Параметрлер осы браузерде сақталады және сайттың барлық беттеріне қолданылады.",
+    panelOpen: "Қолжетімділік баптауларын ашу",
+    panelClose: "Баптау терезесін жабу",
+    skipToContent: "Негізгі мазмұнға өту",
+    fontSizeLabel: "Мәтін өлшемі",
+    fontNormal: "Қалыпты",
+    fontLarge: "Ірі",
+    fontXLarge: "Өте ірі",
+    spacingLabel: "Жоларалық интервал",
+    spacingNormal: "Қалыпты",
+    spacingRelaxed: "Үлкейтілген",
+    underlineLabel: "Сілтемелерді асты сызу",
+    underlineHint: "Сілтемелер әрқашан астынан сызылған күйде көрсетіледі.",
+    enhancedFocusLabel: "Пернетақта бойынша навигацияны белгілеу",
+    enhancedFocusHint:
+      "Tab пернесімен өткенде түймелер мен сілтемелер айқын шекте көрінеді.",
+    contrastLabel: "Контраст режимі",
+    resetLabel: "Баптауларды қалпына келтіру",
+    prefsReset: "Қолжетімділік параметрлері қалпына келтірілді.",
+  },
+};
+
+const byLocale: Record<Locale, Messages> = { ru, kz };
+
+export function getMessages(locale: string): Messages {
+  return byLocale[locale as Locale] ?? ru;
+}

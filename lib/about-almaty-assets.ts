@@ -1,0 +1,22 @@
+/** Hero «О Алматы»: панорама города и гор */
+export const ABOUT_ALMATY_HERO_IMAGE =
+  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80";
+
+/** Слайды для зигзаг-блоков (порядок = storyBlocks в messages) */
+export const ABOUT_ALMATY_STORY_SLIDES: readonly (readonly string[])[] = [
+  [
+    "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=900&q=80",
+    "https://images.unsplash.com/photo-1619546813926-a78fa6372cd2?w=900&q=80",
+    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=80",
+  ],
+  [
+    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80",
+    "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=900&q=80",
+    "https://images.unsplash.com/photo-1441974231531-6221160919e3?w=900&q=80",
+  ],
+  [
+    "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=900&q=80",
+    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80",
+    "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900&q=80",
+  ],
+] as const;

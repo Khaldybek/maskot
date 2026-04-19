@@ -12,15 +12,57 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  overflow-x: clip;
+  color-scheme: light;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
+  background: #ffffff;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: clip;
+}
+
+/* Переход по «Перейти к содержимому» */
+#main-content:focus {
+  outline: 3px solid #de2e06;
+  outline-offset: 2px;
+}
+
+/* Масштаб базового шрифта (rem) */
+html[data-a11y-font="large"] {
+  font-size: 106.25%;
+}
+
+html[data-a11y-font="xlarge"] {
+  font-size: 118.75%;
+}
+
+html[data-a11y-spacing="relaxed"] body {
+  line-height: 1.7;
+}
+
+/* Режим «глаз»: ч/б для слабовидящих */
+html[data-a11y-contrast="true"] body {
+  filter: grayscale(1) contrast(1.12);
+}
+
+html[data-a11y-underline-links="true"] a {
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em;
+}
+
+html[data-a11y-enhanced-focus="true"] :focus-visible {
+  outline: 3px solid #de2e06 !important;
+  outline-offset: 3px !important;
 }
