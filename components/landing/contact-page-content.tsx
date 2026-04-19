@@ -337,11 +337,6 @@ export function ContactPageContent({ content }: Props) {
               className="absolute bottom-10 left-[1.125rem] top-10 w-px bg-zinc-200 md:left-1/2 md:-translate-x-1/2"
               aria-hidden
             />
-            <div
-              className="absolute bottom-10 left-[1.125rem] top-10 w-px md:left-1/2 md:-translate-x-1/2"
-              style={{ background: `linear-gradient(to bottom, transparent 0%, ${accent} 8%, ${accent} 92%, transparent 100%)` }}
-              aria-hidden
-            />
 
             <div className="space-y-12 md:space-y-20">
               {content.newcomerBlocks.map((block, blockIndex) => {
