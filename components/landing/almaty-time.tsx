@@ -1,7 +1,10 @@
 "use client";
 
+import { Clock } from "lucide-react";
 import { useLocale } from "@/components/locale-provider";
 import { useCallback, useEffect, useState } from "react";
+
+const accent = "text-[#DE2E06]";
 
 const TZ = "Asia/Almaty";
 
@@ -20,21 +23,30 @@ export function AlmatyTime() {
     [intlLocale],
   );
 
-  const [time, setTime] = useState<string>(() => format(new Date()));
+  const [clock, setClock] = useState(() => new Date());
 
   useEffect(() => {
-    const tick = () => setTime(format(new Date()));
+    const tick = () => setClock(new Date());
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, [format]);
+  }, []);
+
+  const label = format(clock);
 
   return (
-    <time
-      dateTime={time}
-      suppressHydrationWarning
-      className="text-base font-medium tabular-nums text-neutral-900"
-    >
-      {time}
-    </time>
+    <span className="inline-flex items-center gap-2.5">
+      <Clock
+        className={`size-5 shrink-0 ${accent}`}
+        strokeWidth={2}
+        aria-hidden
+      />
+      <time
+        dateTime={clock.toISOString()}
+        suppressHydrationWarning
+        className={`text-base font-extrabold tabular-nums tracking-tight ${accent}`}
+      >
+        {label}
+      </time>
+    </span>
   );
 }

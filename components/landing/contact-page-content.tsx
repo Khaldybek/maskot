@@ -96,19 +96,19 @@ export function ContactPageContent({ content }: Props) {
           </div>
         </div>
 
-        <ul className="relative z-10 -mt-10 grid grid-cols-1 gap-4 sm:-mt-14 sm:grid-cols-2 lg:-mt-16 lg:grid-cols-4 lg:gap-5">
-          <li className="min-w-0">
-            <article className="h-full rounded-2xl border border-zinc-100 bg-white p-6">
+        <ul className="relative z-10 -mt-10 grid grid-cols-1 gap-3 sm:-mt-14 sm:grid-cols-2 sm:gap-4 lg:-mt-16 lg:grid-cols-4 lg:gap-4">
+          <li className="flex min-w-0 justify-center">
+            <article className="w-full max-w-[200px] rounded-xl border border-zinc-100 bg-white p-4 sm:max-w-[220px] sm:p-4">
               <Phone
-                className="size-8"
+                className="size-6"
                 style={{ color: accent }}
-                strokeWidth={1.75}
+                strokeWidth={2}
                 aria-hidden
               />
-              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+              <p className="mt-3 text-[10px] font-semibold uppercase tracking-wide text-zinc-500 sm:text-xs">
                 {content.cardPhoneLabel}
               </p>
-              <div className="mt-2 space-y-1 font-bold text-neutral-900">
+              <div className="mt-1.5 space-y-0.5 text-sm font-bold text-neutral-900">
                 {content.phones.map((p) => (
                   <a
                     key={p}
@@ -122,38 +122,38 @@ export function ContactPageContent({ content }: Props) {
               </div>
             </article>
           </li>
-          <li className="min-w-0">
-            <article className="h-full rounded-2xl border border-zinc-100 bg-white p-6">
+          <li className="flex min-w-0 justify-center">
+            <article className="w-full max-w-[200px] rounded-xl border border-zinc-100 bg-white p-4 sm:max-w-[220px] sm:p-4">
               <Mail
-                className="size-8"
+                className="size-6"
                 style={{ color: accent }}
-                strokeWidth={1.75}
+                strokeWidth={2}
                 aria-hidden
               />
-              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+              <p className="mt-3 text-[10px] font-semibold uppercase tracking-wide text-zinc-500 sm:text-xs">
                 {content.cardEmailLabel}
               </p>
               <a
                 href={`mailto:${content.email}`}
-                className="mt-2 block font-bold hover:underline"
+                className="mt-1.5 block break-words text-sm font-bold hover:underline"
                 style={{ color: accent }}
               >
                 {content.email}
               </a>
             </article>
           </li>
-          <li className="min-w-0">
-            <article className="h-full rounded-2xl border border-zinc-100 bg-white p-6">
+          <li className="flex min-w-0 justify-center">
+            <article className="w-full max-w-[200px] rounded-xl border border-zinc-100 bg-white p-4 sm:max-w-[220px] sm:p-4">
               <MapPin
-                className="size-8"
+                className="size-6"
                 style={{ color: accent }}
-                strokeWidth={1.75}
+                strokeWidth={2}
                 aria-hidden
               />
-              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+              <p className="mt-3 text-[10px] font-semibold uppercase tracking-wide text-zinc-500 sm:text-xs">
                 {content.cardAddressLabel}
               </p>
-              <div className="mt-2 font-bold text-neutral-900">
+              <div className="mt-1.5 text-sm font-bold text-neutral-900">
                 <a
                   href={content.addressMapUrl}
                   target="_blank"
@@ -163,24 +163,24 @@ export function ContactPageContent({ content }: Props) {
                 >
                   {content.addressStreet}
                 </a>
-                <p className="mt-1 font-bold text-neutral-900">
+                <p className="mt-1 text-sm font-bold text-neutral-900">
                   {content.addressCity}
                 </p>
               </div>
             </article>
           </li>
-          <li className="min-w-0">
-            <article className="flex aspect-square flex-col rounded-2xl border border-zinc-100 bg-white p-6">
+          <li className="flex min-w-0 justify-center">
+            <article className="flex aspect-square w-full max-w-[200px] flex-col rounded-xl border border-zinc-100 bg-white p-4 sm:max-w-[220px] sm:p-4">
               <Clock
-                className="size-8 shrink-0"
+                className="size-6 shrink-0"
                 style={{ color: accent }}
-                strokeWidth={1.75}
+                strokeWidth={2}
                 aria-hidden
               />
-              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+              <p className="mt-3 text-[10px] font-semibold uppercase tracking-wide text-zinc-500 sm:text-xs">
                 {content.cardHoursLabel}
               </p>
-              <p className="mt-2 font-bold text-neutral-900">
+              <p className="mt-1.5 text-sm font-bold leading-snug text-neutral-900">
                 {content.hours}
               </p>
             </article>
@@ -326,20 +326,24 @@ export function ContactPageContent({ content }: Props) {
 
         <section className="mt-20 overflow-x-clip sm:mt-24 lg:mt-28">
           <h2
-            className="text-center text-2xl font-bold sm:text-3xl"
+            className="text-center text-2xl font-bold tracking-tight sm:text-3xl"
             style={{ color: accent }}
           >
             {content.newcomerTitle}
           </h2>
 
-          <div className="relative mx-auto mt-14 max-w-5xl">
+          <div className="relative mx-auto mt-12 max-w-5xl sm:mt-16">
             <div
-              className="absolute bottom-12 left-[1.125rem] top-12 w-0.5 md:left-1/2 md:-translate-x-1/2"
-              style={{ backgroundColor: accent }}
+              className="absolute bottom-10 left-[1.125rem] top-10 w-px bg-zinc-200 md:left-1/2 md:-translate-x-1/2"
+              aria-hidden
+            />
+            <div
+              className="absolute bottom-10 left-[1.125rem] top-10 w-px md:left-1/2 md:-translate-x-1/2"
+              style={{ background: `linear-gradient(to bottom, transparent 0%, ${accent} 8%, ${accent} 92%, transparent 100%)` }}
               aria-hidden
             />
 
-            <div className="space-y-16 md:space-y-24">
+            <div className="space-y-12 md:space-y-20">
               {content.newcomerBlocks.map((block, blockIndex) => {
                 const slides = CONTACT_NEWCOMER_SLIDES[blockIndex];
                 const triplet = slides?.length ? (
@@ -352,29 +356,25 @@ export function ContactPageContent({ content }: Props) {
                     className="relative pl-10 md:pl-0"
                   >
                     <span
-                      className="absolute left-0 top-8 size-4 rounded-full border-2 border-white shadow md:left-1/2 md:top-10 md:-ml-2"
+                      className="absolute left-0 top-7 z-[1] size-3.5 rounded-full border-[3px] border-white shadow-sm ring-2 ring-[#DE2E06]/25 md:left-1/2 md:top-9 md:-ml-[7px]"
                       style={{ backgroundColor: accent }}
                       aria-hidden
                     />
 
                     <div
-                      className={`flex flex-col gap-8 lg:flex-row lg:items-center ${
+                      className={`flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12 ${
                         blockIndex % 2 === 1 ? "lg:flex-row-reverse" : ""
                       }`}
                     >
-                      <div
-                        className={`order-2 min-w-0 flex-1 space-y-3 lg:order-none ${
-                          blockIndex % 2 === 0
-                            ? "lg:text-right lg:pr-4"
-                            : "lg:pl-4 lg:text-left"
-                        }`}
-                      >
-                        <h3 className="text-xl font-bold text-neutral-900">
-                          {block.title}
-                        </h3>
-                        <p className="text-base leading-relaxed text-neutral-800">
-                          {block.body}
-                        </p>
+                      <div className="order-2 min-w-0 flex-1 lg:order-none">
+                        <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] sm:p-7">
+                          <h3 className="text-lg font-bold leading-snug tracking-tight text-neutral-900 sm:text-xl">
+                            {block.title}
+                          </h3>
+                          <p className="mt-4 max-w-prose text-[15px] leading-[1.75] text-neutral-600 sm:text-base">
+                            {block.body}
+                          </p>
+                        </div>
                       </div>
                       <div className="order-1 min-w-0 flex-1 lg:order-none">
                         {triplet}

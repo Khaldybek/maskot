@@ -129,8 +129,8 @@ export function SiteHeader({ weatherSlot, a11ySlot }: SiteHeaderProps) {
               priority
             />
           </Link>
-          <div className="flex min-w-0 flex-col justify-center gap-0.5">
-            <div className="flex items-center gap-1.5">{weatherSlot}</div>
+          <div className="flex min-w-0 flex-col justify-center gap-1 sm:gap-1.5">
+            <div className="min-h-[1.375rem] sm:min-h-6">{weatherSlot}</div>
             <AlmatyTime />
           </div>
         </div>

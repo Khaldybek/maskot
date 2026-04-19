@@ -8,10 +8,12 @@ export async function NavWeather() {
   const result = await fetchAlmatyWeather().catch(() => null);
   if (!result) {
     return (
-      <>
+      <span className="inline-flex items-center gap-2.5">
         <Sun className="size-5 shrink-0 text-zinc-400" strokeWidth={1.75} aria-hidden />
-        <span className="text-base font-bold tabular-nums text-zinc-400">—°C</span>
-      </>
+        <span className="text-base font-extrabold tabular-nums tracking-tight text-zinc-400">
+          —°C
+        </span>
+      </span>
     );
   }
 
@@ -21,13 +23,17 @@ export async function NavWeather() {
     temperatureC > 0 ? `+${temperatureC}°C` : `${temperatureC}°C`;
 
   return (
-    <>
+    <span className="inline-flex items-center gap-2.5">
       {createElement(IconComponent, {
         className: `size-5 shrink-0 ${brand}`,
-        strokeWidth: 1.75,
+        strokeWidth: 2,
         "aria-hidden": true,
       })}
-      <span className={`text-base font-bold tabular-nums ${brand}`}>{label}</span>
-    </>
+      <span
+        className={`text-base font-extrabold tabular-nums tracking-tight ${brand}`}
+      >
+        {label}
+      </span>
+    </span>
   );
 }

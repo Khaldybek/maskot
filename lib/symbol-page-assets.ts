@@ -1,7 +1,3 @@
-/** Герой «Символ»: долина, горы, юрта */
-export const SYMBOL_PAGE_HERO_IMAGE =
-  "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=1920&q=80";
-
 /** Слайды по блокам `symbolPage.storyBlocks` (3 блока × 3 слайда) */
 export const SYMBOL_PAGE_STORY_SLIDES: readonly (readonly string[])[] = [
   [

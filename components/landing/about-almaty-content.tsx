@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Calendar, MapPin, Mountain, Users } from "lucide-react";
-import { AboutAlmatyStorySlider } from "@/components/landing/about-almaty-story-slider";
+import { StoryBlocksWithSlider } from "@/components/landing/story-blocks-with-slider";
 import {
   ABOUT_ALMATY_HERO_IMAGE,
   ABOUT_ALMATY_STORY_SLIDES,
@@ -53,16 +53,12 @@ export function AboutAlmatyContent({ content }: Props) {
             <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
               {blocks.map((block, i) => {
                 const Icon = icons[i];
-                const isNatureCard = i === 3;
                 return (
-                  <li key={block.title} className="min-w-0">
-                    <article
-                      className={
-                        isNatureCard
-                          ? "mx-auto flex aspect-square w-full max-w-[200px] flex-col rounded-2xl border border-zinc-100 bg-white p-5 sm:max-w-[220px] sm:p-6"
-                          : "flex h-full flex-col rounded-2xl border border-zinc-100 bg-white p-6"
-                      }
-                    >
+                  <li
+                    key={block.title}
+                    className="flex min-w-0 justify-center"
+                  >
+                    <article className="flex aspect-square w-full max-w-[220px] flex-col rounded-2xl border border-zinc-100 bg-white p-5 sm:max-w-[240px] sm:p-6">
                       <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-rose-50 text-[#DE2E06]">
                         <Icon className="size-6" strokeWidth={1.75} aria-hidden />
                       </div>
@@ -80,44 +76,13 @@ export function AboutAlmatyContent({ content }: Props) {
           </div>
         </div>
 
-        <div className="mt-16 space-y-16 sm:mt-20 sm:space-y-20 lg:mt-24 lg:space-y-24">
-          {content.storyBlocks.map((block, blockIndex) => {
-            const slides = ABOUT_ALMATY_STORY_SLIDES[blockIndex];
-            if (!slides?.length) return null;
-
-            return (
-              <section
-                key={block.title}
-                className={`flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12 xl:gap-16 ${
-                  blockIndex % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
-              >
-                <div className="order-2 min-w-0 flex-1 space-y-4 lg:order-none">
-                  <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
-                    {block.title}
-                  </h2>
-                  {block.paragraphs.map((p, pi) => (
-                    <p
-                      key={pi}
-                      className="text-base leading-relaxed text-neutral-700"
-                    >
-                      {p}
-                    </p>
-                  ))}
-                </div>
-                <div className="order-1 w-full min-w-0 flex-1 lg:order-none lg:max-w-none">
-                  <AboutAlmatyStorySlider
-                    images={slides}
-                    alts={block.slideAlts}
-                    prevLabel={content.sliderPrev}
-                    nextLabel={content.sliderNext}
-                    dotAriaTemplate={content.sliderDotAria}
-                  />
-                </div>
-              </section>
-            );
-          })}
-        </div>
+        <StoryBlocksWithSlider
+          storyBlocks={content.storyBlocks}
+          slideSets={ABOUT_ALMATY_STORY_SLIDES}
+          sliderPrev={content.sliderPrev}
+          sliderNext={content.sliderNext}
+          sliderDotAria={content.sliderDotAria}
+        />
       </div>
     </div>
   );
