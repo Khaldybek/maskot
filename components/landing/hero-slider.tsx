@@ -65,7 +65,7 @@ export function HeroSlider({
   const src = images[active] ?? images[0];
 
   return (
-    <div className="relative flex h-full min-h-[380px] min-w-0 flex-1 flex-col overflow-hidden rounded-[2rem] bg-zinc-300 shadow-xl sm:min-h-[420px] lg:min-h-0">
+    <div className="relative flex h-full min-h-[260px] w-full min-w-0 flex-1 flex-col overflow-hidden rounded-2xl bg-zinc-300 shadow-xl sm:min-h-[300px] sm:rounded-[2rem] md:min-h-[360px] lg:min-h-0">
       <div className="relative h-full min-h-0 flex-1">
         <Image
           key={src}
@@ -84,16 +84,16 @@ export function HeroSlider({
         />
 
         <div className="absolute inset-0 z-10 flex flex-col justify-end">
-          <div className="px-5 pb-2 pt-8 sm:px-7 sm:pb-3 sm:pt-10 lg:px-8">
-            <h2 className="text-balance break-words text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl lg:text-[1.85rem] lg:leading-tight xl:text-4xl">
+          <div className="px-4 pb-2 pt-6 sm:px-7 sm:pb-3 sm:pt-10 lg:px-8">
+            <h2 className="text-balance break-words text-xl font-bold leading-tight tracking-tight text-white sm:text-2xl sm:leading-tight md:text-3xl lg:text-[1.85rem] lg:leading-tight xl:text-4xl">
               {current.title}
             </h2>
-            <p className="mt-2 max-w-md text-sm font-normal leading-relaxed text-white/95 sm:text-base">
+            <p className="mt-1.5 max-w-md text-[13px] font-normal leading-relaxed text-white/95 sm:mt-2 sm:text-sm md:text-base">
               {current.description}
             </p>
             <Link
               href={detailsHref}
-              className="mt-4 inline-flex w-fit items-center justify-center rounded-full border-2 border-[#DE2E06] bg-black/60 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-black/80 sm:mt-5 sm:px-7 sm:py-3 sm:text-base"
+              className="mt-3 inline-flex w-full max-w-full items-center justify-center rounded-full border-2 border-[#DE2E06] bg-black/60 px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-black/80 min-[400px]:w-fit sm:mt-4 sm:px-6 sm:py-2.5 sm:text-sm md:mt-5 md:px-7 md:py-3 md:text-base"
             >
               {moreDetailsLabel}
             </Link>
