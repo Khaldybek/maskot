@@ -192,13 +192,44 @@ export type Messages = {
       rgb: string;
       role: string;
     }>;
-    typographyTitle: string;
-    typographyPrimaryBadge: string;
-    typographySecondaryBadge: string;
-    typographyPrimaryDescription: string;
-    typographySecondaryDescription: string;
-    typographySecondaryWeights: string;
-    fontPreviewSample: string;
+    colorPairingsTitle: string;
+    colorPairings: Array<{
+      title: string;
+      subtitle: string;
+      swatches: string[];
+    }>;
+    typographyOverviewTitle: string;
+    typographyOverviewPrimaryBadge: string;
+    typographyOverviewSecondaryBadge: string;
+    typographyOverviewPrimaryDescription: string;
+    typographyOverviewSecondaryDescription: string;
+    typographyOverviewWeightsLabel: string;
+    typographyOverviewWeights: string;
+    typographyScaleTitle: string;
+    typographyScaleRows: Array<{
+      usage: string;
+      fontName: string;
+      size: string;
+      sample: string;
+      barColor: string;
+      tone: "brand" | "body" | "caption";
+      underline?: boolean;
+    }>;
+    iconographyTitle: string;
+    iconographySubtitle: string;
+    iconographyIcons: Array<{ label: string }>;
+    iconGuidelinesTitle: string;
+    iconGuidelines: Array<{ title: string; description: string }>;
+    patternsTitle: string;
+    patternsSubtitle: string;
+    patternMountainLabel: string;
+    patternAlaLabel: string;
+    merchTitle: string;
+    merchSubtitle: string;
+    merchItems: Array<{ name: string; kind: string }>;
+    mockupsTitle: string;
+    mockupsSubtitle: string;
+    mockupItems: Array<{ name: string; kind: string }>;
   };
   newsPage: {
     heroTitle: string;
@@ -650,17 +681,146 @@ const ru: Messages = {
         role: "Warmth & Stability",
       },
     ],
-    typographyTitle: "Типографика",
-    typographyPrimaryBadge: "PRIMARY TYPEFACE",
-    typographySecondaryBadge: "SECONDARY TYPEFACE",
-    typographyPrimaryDescription:
-      "Применяется в заголовках, крупных текстовых блоках и важных заявлениях. Обеспечивает мощный визуальный акцент.",
-    typographySecondaryDescription:
-      "Основной шрифт набора и интерфейса: тексты, формы, навигация. Гибкая шкала начертаний задаёт иерархию и читаемость.",
-    typographySecondaryWeights:
-      "Regular 400 · Medium 500 · Semibold 600 · Bold 700",
-    fontPreviewSample:
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+    colorPairingsTitle: "Сочетания цветов",
+    colorPairings: [
+      {
+        title: "PRIMARY PAIRING",
+        subtitle: "Bold & Energetic",
+        swatches: ["#0062D2", "#FACC4F"],
+      },
+      {
+        title: "NATURE PAIRING",
+        subtitle: "Fresh & Natural",
+        swatches: ["#579C04", "#A0D9FF"],
+      },
+      {
+        title: "HERITAGE PAIRING",
+        subtitle: "Warm & Authentic",
+        swatches: ["#DE2E06", "#A1782D"],
+      },
+      {
+        title: "TRIADIC PAIRING",
+        subtitle: "Dynamic & Vibrant",
+        swatches: ["#0062D2", "#A0D9FF", "#579C04"],
+      },
+    ],
+    typographyOverviewTitle: "Типографика",
+    typographyOverviewPrimaryBadge: "PRIMARY TYPEFACE",
+    typographyOverviewSecondaryBadge: "SECONDARY TYPEFACE",
+    typographyOverviewPrimaryDescription:
+      "Применяется в заголовках, крупных текстовых блоках и важных заявлениях. Обеспечивает мощный визуальный акцент",
+    typographyOverviewSecondaryDescription:
+      "Применяется в заголовках, крупных текстовых блоках и важных заявлениях. Обеспечивает мощный визуальный акцент",
+    typographyOverviewWeightsLabel: "Available weights:",
+    typographyOverviewWeights: "Regular 400 • Medium 500 • Semibold 600 • Bold 700",
+    typographyScaleTitle: "Шкала размеров шрифта",
+    typographyScaleRows: [
+      {
+        usage: "Display",
+        fontName: "Archivo Black",
+        size: "96px",
+        sample: "ALMATY",
+        barColor: "#2563eb",
+        tone: "brand",
+      },
+      {
+        usage: "Headline 1",
+        fontName: "Archivo Black",
+        size: "64px",
+        sample: "Где встречаются горы",
+        barColor: "#16a34a",
+        tone: "brand",
+      },
+      {
+        usage: "Headline 2",
+        fontName: "Archivo Black",
+        size: "48px",
+        sample: "Культурная столица Казахстана",
+        barColor: "#ca8a04",
+        tone: "brand",
+        underline: true,
+      },
+      {
+        usage: "Headline 3",
+        fontName: "Archivo Black",
+        size: "32px",
+        sample: "Природа и городская жизнь",
+        barColor: "#dc2626",
+        tone: "brand",
+      },
+      {
+        usage: "Body",
+        fontName: "Inter",
+        size: "18px",
+        sample:
+          "Алматы — живой город у подножия Заилийского Алатау. Бренд отражает гармонию природы и урбанистической среды, свободу, энергию и историческую идентичность города как родины яблок.",
+        barColor: "#a16207",
+        tone: "body",
+      },
+      {
+        usage: "Caption",
+        fontName: "Inter",
+        size: "14px",
+        sample:
+          "Вспомогательные тексты и подписи на Inter для лучшей читаемости",
+        barColor: "#38bdf8",
+        tone: "caption",
+      },
+    ],
+    iconographyTitle: "Иконография",
+    iconographySubtitle:
+      "Визуальный алфавит, рассказывающий историю Алматы.",
+    iconographyIcons: [
+      { label: "Горы" },
+      { label: "Яблоко" },
+      { label: "Солнце" },
+      { label: "Природа" },
+      { label: "Город" },
+      { label: "Культура" },
+      { label: "Сообщество" },
+      { label: "Навигация" },
+      { label: "Туризм" },
+      { label: "Искусство" },
+      { label: "Соцсети" },
+      { label: "Энергия" },
+    ],
+    iconGuidelinesTitle: "ICON GUIDELINES",
+    iconGuidelines: [
+      {
+        title: "Stroke Weight",
+        description: "Use 2.5px stroke for consistency",
+      },
+      {
+        title: "Corner Radius",
+        description: "Rounded ends (line-cap: round)",
+      },
+      {
+        title: "Grid System",
+        description: "24×24px base grid for all icons",
+      },
+    ],
+    patternsTitle: "Паттерны",
+    patternsSubtitle: "Ритм гор и геометрия города, заложенные в основу стиля.",
+    patternMountainLabel: "MOUNTAIN PATTERN",
+    patternAlaLabel: "ALA PATTERN",
+    merchTitle: "Merch коллекция",
+    merchSubtitle: "Частичка города, которую можно взять с собой",
+    merchItems: [
+      { name: "Tote Bag", kind: "bag" },
+      { name: "T-Shirt", kind: "shirt" },
+      { name: "Cap", kind: "cap" },
+      { name: "Mug", kind: "mug" },
+      { name: "Thermos", kind: "thermos" },
+      { name: "Phone Case", kind: "case" },
+    ],
+    mockupsTitle: "Мокапы",
+    mockupsSubtitle: "Как новый образ Алматы оживает на улицах и площадях.",
+    mockupItems: [
+      { name: "Метро-ситилайт", kind: "metro" },
+      { name: "Станционный постер", kind: "station" },
+      { name: "Ночной билборд", kind: "billboard" },
+      { name: "Остановка", kind: "bus-stop" },
+    ],
   },
   newsPage: {
     heroTitle: "НОВОСТИ",
@@ -1249,17 +1409,146 @@ const kz: Messages = {
         role: "Жылу және тұрақтылық",
       },
     ],
-    typographyTitle: "Типография",
-    typographyPrimaryBadge: "PRIMARY TYPEFACE",
-    typographySecondaryBadge: "SECONDARY TYPEFACE",
-    typographyPrimaryDescription:
-      "Тақырыптар, ірі мәтіндік блоктар және маңызды мәлімдемелер үшін қолданылады. Күшті визуалды акцент береді.",
-    typographySecondaryDescription:
-      "Негізгі мәтін мен интерфейс: материалдар, формалар, навигация. Бастау түрлерінің икемді шкаласы иерархия мен оқылуды қамтамасыз етеді.",
-    typographySecondaryWeights:
-      "Regular 400 · Medium 500 · Semibold 600 · Bold 700",
-    fontPreviewSample:
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+    colorPairingsTitle: "Түс үйлесімдері",
+    colorPairings: [
+      {
+        title: "PRIMARY PAIRING",
+        subtitle: "Батыл әрі қуатты",
+        swatches: ["#0062D2", "#FACC4F"],
+      },
+      {
+        title: "NATURE PAIRING",
+        subtitle: "Табиғи әрі сергек",
+        swatches: ["#579C04", "#A0D9FF"],
+      },
+      {
+        title: "HERITAGE PAIRING",
+        subtitle: "Жылы әрі түпнұсқа",
+        swatches: ["#DE2E06", "#A1782D"],
+      },
+      {
+        title: "TRIADIC PAIRING",
+        subtitle: "Қанық әрі динамикалық",
+        swatches: ["#0062D2", "#A0D9FF", "#579C04"],
+      },
+    ],
+    typographyOverviewTitle: "Типография",
+    typographyOverviewPrimaryBadge: "PRIMARY TYPEFACE",
+    typographyOverviewSecondaryBadge: "SECONDARY TYPEFACE",
+    typographyOverviewPrimaryDescription:
+      "Тақырыптарда, ірі мәтіндік блоктарда және маңызды мәлімдемелерде қолданылады. Күшті визуалды акцент береді",
+    typographyOverviewSecondaryDescription:
+      "Тақырыптарда, ірі мәтіндік блоктарда және маңызды мәлімдемелерде қолданылады. Күшті визуалды акцент береді",
+    typographyOverviewWeightsLabel: "Қолжетімді салмақтар:",
+    typographyOverviewWeights: "Regular 400 • Medium 500 • Semibold 600 • Bold 700",
+    typographyScaleTitle: "Қаріп өлшемдерінің шкаласы",
+    typographyScaleRows: [
+      {
+        usage: "Display",
+        fontName: "Archivo Black",
+        size: "96px",
+        sample: "ALMATY",
+        barColor: "#2563eb",
+        tone: "brand",
+      },
+      {
+        usage: "Headline 1",
+        fontName: "Archivo Black",
+        size: "64px",
+        sample: "Таулар кездесетін жер",
+        barColor: "#16a34a",
+        tone: "brand",
+      },
+      {
+        usage: "Headline 2",
+        fontName: "Archivo Black",
+        size: "48px",
+        sample: "Қазақстанның мәдени астанасы",
+        barColor: "#ca8a04",
+        tone: "brand",
+        underline: true,
+      },
+      {
+        usage: "Headline 3",
+        fontName: "Archivo Black",
+        size: "32px",
+        sample: "Табиғат пен қала өмірі",
+        barColor: "#dc2626",
+        tone: "brand",
+      },
+      {
+        usage: "Body",
+        fontName: "Inter",
+        size: "18px",
+        sample:
+          "Алматы — Іле Алатауының тауларымен қоршалған жанды қала. Бренд табиғат пен қала ортасының үйлесімін, бостандық пен энергияны, алманың отаны ретіндегі тарихи өзіндікті білдіреді.",
+        barColor: "#a16207",
+        tone: "body",
+      },
+      {
+        usage: "Caption",
+        fontName: "Inter",
+        size: "14px",
+        sample:
+          "Қосымша мәтіндер мен жазбалар Inter арқылы оқылу үшін ыңғайлы",
+        barColor: "#38bdf8",
+        tone: "caption",
+      },
+    ],
+    iconographyTitle: "Иконография",
+    iconographySubtitle:
+      "Алматы оқиғасын айтатын визуалды әліпби.",
+    iconographyIcons: [
+      { label: "Таулар" },
+      { label: "Алма" },
+      { label: "Күн" },
+      { label: "Табиғат" },
+      { label: "Қала" },
+      { label: "Мәдениет" },
+      { label: "Қауым" },
+      { label: "Навигация" },
+      { label: "Туризм" },
+      { label: "Өнер" },
+      { label: "Әлеуметтік" },
+      { label: "Энергия" },
+    ],
+    iconGuidelinesTitle: "ICON GUIDELINES",
+    iconGuidelines: [
+      {
+        title: "Stroke Weight",
+        description: "Use 2.5px stroke for consistency",
+      },
+      {
+        title: "Corner Radius",
+        description: "Rounded ends (line-cap: round)",
+      },
+      {
+        title: "Grid System",
+        description: "24×24px base grid for all icons",
+      },
+    ],
+    patternsTitle: "Паттерндер",
+    patternsSubtitle: "Таулар ырғағы мен қала геометриясы стильдің негізіне айналды.",
+    patternMountainLabel: "TAU PATTERN",
+    patternAlaLabel: "ALA PATTERN",
+    merchTitle: "Merch жинағы",
+    merchSubtitle: "Қала рухын өзіңізбен бірге алып жүруге болатын заттар",
+    merchItems: [
+      { name: "Tote Bag", kind: "bag" },
+      { name: "T-Shirt", kind: "shirt" },
+      { name: "Cap", kind: "cap" },
+      { name: "Mug", kind: "mug" },
+      { name: "Thermos", kind: "thermos" },
+      { name: "Phone Case", kind: "case" },
+    ],
+    mockupsTitle: "Мокаптар",
+    mockupsSubtitle: "Алматының жаңа бейнесі көшелер мен алаңдарда қалай көрінетінін көрсетеді.",
+    mockupItems: [
+      { name: "Метро-ситилайт", kind: "metro" },
+      { name: "Станса постері", kind: "station" },
+      { name: "Түнгі билборд", kind: "billboard" },
+      { name: "Аялдама", kind: "bus-stop" },
+    ],
   },
   newsPage: {
     heroTitle: "ЖАҢАЛЫҚТАР",

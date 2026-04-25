@@ -136,7 +136,7 @@ export function SiteHeader({ weatherSlot, a11ySlot }: SiteHeaderProps) {
         </div>
 
         <nav
-          className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 flex-nowrap items-center justify-center gap-1 xl:flex 2xl:gap-1.5"
+          className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 flex-nowrap items-center justify-center gap-1 lg:flex 2xl:gap-1.5"
           aria-label={t.header.mainNav}
         >
           {routes.map((item) => (
@@ -154,7 +154,7 @@ export function SiteHeader({ weatherSlot, a11ySlot }: SiteHeaderProps) {
           <LanguageSwitch locale={locale} />
           <button
             type="button"
-            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg p-2 text-neutral-800 xl:hidden"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg p-2 text-neutral-800 lg:hidden"
             aria-expanded={open}
             aria-label={open ? t.header.closeMenu : t.header.openMenu}
             onClick={() => setOpen((v) => !v)}
@@ -165,7 +165,7 @@ export function SiteHeader({ weatherSlot, a11ySlot }: SiteHeaderProps) {
       </div>
 
       {open && (
-        <div className="border-t border-neutral-200 bg-white px-4 py-4 xl:hidden">
+        <div className="border-t border-neutral-200 bg-white px-4 py-4 lg:hidden">
           <nav className="flex flex-col gap-1" aria-label={t.header.mobileNav}>
             {routes.map((item) => (
               <NavLink
