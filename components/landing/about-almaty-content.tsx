@@ -58,7 +58,7 @@ export function AboutAlmatyContent({ content }: Props) {
                     key={block.title}
                     className="flex min-w-0 justify-center"
                   >
-                    <article className="flex aspect-square w-full max-w-[220px] flex-col rounded-2xl border border-zinc-100 bg-white p-5 sm:max-w-[240px] sm:p-6">
+                    <article className="flex aspect-square w-full max-w-[220px] flex-col rounded-2xl border border-zinc-100 bg-white p-5 shadow-[0_4px_14px_rgba(0,0,0,0.08),0_14px_44px_rgba(0,0,0,0.14)] sm:max-w-[240px] sm:p-6">
                       <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-rose-50 text-[#DE2E06]">
                         <Icon className="size-6" strokeWidth={1.75} aria-hidden />
                       </div>

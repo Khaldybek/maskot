@@ -98,7 +98,7 @@ export function ContactPageContent({ content }: Props) {
 
         <ul className="relative z-10 -mt-10 grid grid-cols-1 gap-3 sm:-mt-14 sm:grid-cols-2 sm:gap-4 lg:-mt-16 lg:grid-cols-4 lg:gap-4">
           <li className="flex min-w-0 justify-center">
-            <article className="w-full max-w-[200px] rounded-xl border border-zinc-100 bg-white p-4 sm:max-w-[220px] sm:p-4">
+            <article className="w-full max-w-[200px] rounded-xl border border-zinc-100 bg-white p-4 shadow-[0_4px_14px_rgba(0,0,0,0.08),0_14px_44px_rgba(0,0,0,0.14)] sm:max-w-[220px] sm:p-4">
               <Phone
                 className="size-6"
                 style={{ color: accent }}
@@ -123,7 +123,7 @@ export function ContactPageContent({ content }: Props) {
             </article>
           </li>
           <li className="flex min-w-0 justify-center">
-            <article className="w-full max-w-[200px] rounded-xl border border-zinc-100 bg-white p-4 sm:max-w-[220px] sm:p-4">
+            <article className="w-full max-w-[200px] rounded-xl border border-zinc-100 bg-white p-4 shadow-[0_4px_14px_rgba(0,0,0,0.08),0_14px_44px_rgba(0,0,0,0.14)] sm:max-w-[220px] sm:p-4">
               <Mail
                 className="size-6"
                 style={{ color: accent }}
@@ -143,7 +143,7 @@ export function ContactPageContent({ content }: Props) {
             </article>
           </li>
           <li className="flex min-w-0 justify-center">
-            <article className="w-full max-w-[200px] rounded-xl border border-zinc-100 bg-white p-4 sm:max-w-[220px] sm:p-4">
+            <article className="w-full max-w-[200px] rounded-xl border border-zinc-100 bg-white p-4 shadow-[0_4px_14px_rgba(0,0,0,0.08),0_14px_44px_rgba(0,0,0,0.14)] sm:max-w-[220px] sm:p-4">
               <MapPin
                 className="size-6"
                 style={{ color: accent }}
@@ -170,7 +170,7 @@ export function ContactPageContent({ content }: Props) {
             </article>
           </li>
           <li className="flex min-w-0 justify-center">
-            <article className="flex aspect-square w-full max-w-[200px] flex-col rounded-xl border border-zinc-100 bg-white p-4 sm:max-w-[220px] sm:p-4">
+            <article className="flex aspect-square w-full max-w-[200px] flex-col rounded-xl border border-zinc-100 bg-white p-4 shadow-[0_4px_14px_rgba(0,0,0,0.08),0_14px_44px_rgba(0,0,0,0.14)] sm:max-w-[220px] sm:p-4">
               <Clock
                 className="size-6 shrink-0"
                 style={{ color: accent }}

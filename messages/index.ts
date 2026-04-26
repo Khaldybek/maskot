@@ -226,10 +226,10 @@ export type Messages = {
     patternAlaLabel: string;
     merchTitle: string;
     merchSubtitle: string;
-    merchItems: Array<{ name: string; kind: string }>;
+    merchItems: Array<{ name: string; kind: string; imageSrc: string }>;
     mockupsTitle: string;
     mockupsSubtitle: string;
-    mockupItems: Array<{ name: string; kind: string }>;
+    mockupItems: Array<{ name: string; kind: string; imageSrc: string }>;
   };
   newsPage: {
     heroTitle: string;
@@ -382,6 +382,7 @@ const ru: Messages = {
         description:
           "Самый живописный и доступный маршрут с панорамным видом на весь город.",
         alt: "Панорама горного маршрута Кок-Жайлау",
+
       },
       {
         imageLabel: "Большой Алматинский Пик",
@@ -601,11 +602,7 @@ const ru: Messages = {
           "На протяжении веков долины Алматы были покрыты дикими яблонями — Malus sieversii — предком всех современных культурных яблок. Это природное наследие дало городу его название и стало частью его идентичности.",
           "Яблоко символизирует не только наше сельскохозяйственное прошлое, но и способность развиваться, взращивать инновации и делиться своими плодами с миром.",
         ],
-        slideAlts: [
-          "Спелые алматинские апорты",
-          "Яблоки на ветке",
-          "Яблоневый сад в горах",
-        ],
+        slideAlts: ["Спелые алматинские апорты", "Яблоки на ветке"],
       },
       {
         title: "Очаг единства — Юрта",
@@ -806,20 +803,20 @@ const ru: Messages = {
     merchTitle: "Merch коллекция",
     merchSubtitle: "Частичка города, которую можно взять с собой",
     merchItems: [
-      { name: "Tote Bag", kind: "bag" },
-      { name: "T-Shirt", kind: "shirt" },
-      { name: "Cap", kind: "cap" },
-      { name: "Mug", kind: "mug" },
-      { name: "Thermos", kind: "thermos" },
-      { name: "Phone Case", kind: "case" },
+      { name: "Tote Bag", kind: "bag", imageSrc: "/conts/img_2.png" },
+      { name: "T-Shirt", kind: "shirt", imageSrc: "/conts/img_3.png" },
+      { name: "Cap", kind: "cap", imageSrc: "/conts/img_4.png" },
+      { name: "Mug", kind: "mug", imageSrc: "/conts/img_5.png" },
+      { name: "Thermos", kind: "thermos", imageSrc: "/conts/img_6.png" },
+      { name: "Phone Case", kind: "case", imageSrc: "/conts/img_7.png" },
     ],
     mockupsTitle: "Мокапы",
     mockupsSubtitle: "Как новый образ Алматы оживает на улицах и площадях.",
     mockupItems: [
-      { name: "Метро-ситилайт", kind: "metro" },
-      { name: "Станционный постер", kind: "station" },
-      { name: "Ночной билборд", kind: "billboard" },
-      { name: "Остановка", kind: "bus-stop" },
+      { name: "Метро-ситилайт", kind: "metro", imageSrc: "/conts/m1.png" },
+      { name: "Станционный постер", kind: "station", imageSrc: "/conts/m2.png" },
+      { name: "Ночной билборд", kind: "billboard", imageSrc: "/conts/m3.png" },
+      { name: "Остановка", kind: "bus-stop", imageSrc: "/conts/m4.png" },
     ],
   },
   newsPage: {
@@ -1329,11 +1326,7 @@ const kz: Messages = {
           "Ғасырлар бойы Алматы аңғарлары Malus sieversii — барлық заманауи мәдени алманың ата-бабасы — дикті алма ағаштарымен жабық болды. Бұл табиғи мұра қалаға атын берді және оның өзіндігінің бөлігі болды.",
           "Алма тек ауыл шаруашылығы өткенімізді ғана емес, сонымен қатар дамуға, инновацияны өсіруге және жемісімізбен әлеммен бөлісуге қабілеттілікті бейнелейді.",
         ],
-        slideAlts: [
-          "Піскен алматы аорттары",
-          "Бұтадағы алмалар",
-          "Таудағы алма бағы",
-        ],
+        slideAlts: ["Піскен алматы аорттары", "Бұтадағы алмалар"],
       },
       {
         title: "Бірлік ошағы — киіз үй",
@@ -1534,20 +1527,20 @@ const kz: Messages = {
     merchTitle: "Merch жинағы",
     merchSubtitle: "Қала рухын өзіңізбен бірге алып жүруге болатын заттар",
     merchItems: [
-      { name: "Tote Bag", kind: "bag" },
-      { name: "T-Shirt", kind: "shirt" },
-      { name: "Cap", kind: "cap" },
-      { name: "Mug", kind: "mug" },
-      { name: "Thermos", kind: "thermos" },
-      { name: "Phone Case", kind: "case" },
+      { name: "Tote Bag", kind: "bag", imageSrc: "/conts/img_2.png" },
+      { name: "T-Shirt", kind: "shirt", imageSrc: "/conts/img_3.png" },
+      { name: "Cap", kind: "cap", imageSrc: "/conts/img_4.png" },
+      { name: "Mug", kind: "mug", imageSrc: "/conts/img_5.png" },
+      { name: "Thermos", kind: "thermos", imageSrc: "/conts/img_6.png" },
+      { name: "Phone Case", kind: "case", imageSrc: "/conts/img_7.png" },
     ],
     mockupsTitle: "Мокаптар",
     mockupsSubtitle: "Алматының жаңа бейнесі көшелер мен алаңдарда қалай көрінетінін көрсетеді.",
     mockupItems: [
-      { name: "Метро-ситилайт", kind: "metro" },
-      { name: "Станса постері", kind: "station" },
-      { name: "Түнгі билборд", kind: "billboard" },
-      { name: "Аялдама", kind: "bus-stop" },
+      { name: "Метро-ситилайт", kind: "metro", imageSrc: "/conts/m1.png" },
+      { name: "Станса постері", kind: "station", imageSrc: "/conts/m2.png" },
+      { name: "Түнгі билборд", kind: "billboard", imageSrc: "/conts/m3.png" },
+      { name: "Аялдама", kind: "bus-stop", imageSrc: "/conts/m4.png" },
     ],
   },
   newsPage: {

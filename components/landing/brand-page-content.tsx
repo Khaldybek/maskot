@@ -37,7 +37,8 @@ const ALMATY_BLUE = "#0062D2";
 const BRAND_HEADING_BLUE = "#1e56cf";
 const ICON_STROKE = "#7c5c2b";
 const ICON_TILE_BG = "#fefce8";
-const PATTERN_BLUE = "#0f62c9";
+/** Тёплый «черноватый» фон-маска под превью (паттерны, мерч, мокапы) */
+const PATTERN_MASK_BG = "#e5ded4";
 
 const ICONOGRAPHY_GLYPHS: LucideIcon[] = [
   Mountain,
@@ -53,22 +54,6 @@ const ICONOGRAPHY_GLYPHS: LucideIcon[] = [
   Network,
   Sparkles,
 ];
-
-const MERCH_CARD_BG_BY_KIND: Record<string, string> = {
-  bag: "linear-gradient(135deg,#f8fafc 0%,#e5e7eb 100%)",
-  shirt: "linear-gradient(135deg,#f3f4f6 0%,#d4d4d8 100%)",
-  cap: "linear-gradient(135deg,#f5f5f5 0%,#d4d4d4 100%)",
-  mug: "linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%)",
-  thermos: "linear-gradient(135deg,#f1f5f9 0%,#cbd5e1 100%)",
-  case: "linear-gradient(135deg,#f8fafc 0%,#e5e7eb 100%)",
-};
-
-const MOCKUP_CARD_BG_BY_KIND: Record<string, string> = {
-  metro: "linear-gradient(140deg,#1f2937 0%,#4b5563 45%,#111827 100%)",
-  station: "linear-gradient(140deg,#d1d5db 0%,#9ca3af 55%,#6b7280 100%)",
-  billboard: "linear-gradient(140deg,#0b1020 0%,#1e293b 55%,#334155 100%)",
-  "bus-stop": "linear-gradient(140deg,#3f2b1e 0%,#7c4a2c 45%,#d97706 100%)",
-};
 
 export function BrandPageContent({ content }: Props) {
   return (
@@ -485,33 +470,42 @@ export function BrandPageContent({ content }: Props) {
           </p>
 
           <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-            <div className="relative aspect-square overflow-hidden rounded-3xl border border-[#0e5ab8]/30 bg-[#0f62c9]">
+            <div
+              className="relative aspect-square overflow-hidden rounded-3xl"
+              style={{ backgroundColor: PATTERN_MASK_BG }}
+            >
+              <Image
+                src="/conts/p1.png"
+                alt={content.patternMountainLabel}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
               <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage:
-                    "repeating-linear-gradient(135deg, #0f62c9 0 34px, #ffffff 34px 39px, #0f62c9 39px 74px), repeating-linear-gradient(45deg, transparent 0 70px, rgba(255,255,255,0.95) 70px 75px, transparent 75px 145px)",
-                }}
+                className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-28 bg-gradient-to-t from-black/50 to-transparent sm:h-32"
                 aria-hidden
               />
-              <p className="absolute bottom-6 left-6 text-lg font-bold tracking-wide text-white/95 sm:text-[1.75rem]">
+              <p className="pointer-events-none absolute bottom-5 left-5 z-10 text-lg font-bold tracking-wide text-white sm:bottom-6 sm:left-6 sm:text-[1.75rem]">
                 {content.patternMountainLabel}
               </p>
             </div>
 
-            <div className="relative aspect-square overflow-hidden rounded-3xl border border-[#0e5ab8]/30 bg-white">
+            <div
+              className="relative aspect-square overflow-hidden rounded-3xl"
+              style={{ backgroundColor: PATTERN_MASK_BG }}
+            >
+              <Image
+                src="/conts/p2.png"
+                alt={content.patternAlaLabel}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
               <div
-                className="absolute inset-0"
-                style={{
-                  backgroundColor: PATTERN_BLUE,
-                  backgroundImage:
-                    "radial-gradient(circle at 0 0, #f3f4f6 0 41%, transparent 42%), radial-gradient(circle at 100% 100%, #f3f4f6 0 41%, transparent 42%), linear-gradient(90deg, #f3f4f6 0 26%, transparent 26% 38%, #f3f4f6 38% 64%, transparent 64% 76%, #f3f4f6 76% 100%)",
-                  backgroundSize: "50% 50%, 50% 50%, 100% 100%",
-                  backgroundPosition: "0 0, 100% 100%, 0 0",
-                }}
+                className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-28 bg-gradient-to-t from-black/50 to-transparent sm:h-32"
                 aria-hidden
               />
-              <p className="absolute bottom-6 left-6 text-lg font-bold tracking-wide text-white/95 sm:text-[1.75rem]">
+              <p className="pointer-events-none absolute bottom-5 left-5 z-10 text-lg font-bold tracking-wide text-white sm:bottom-6 sm:left-6 sm:text-[1.75rem]">
                 {content.patternAlaLabel}
               </p>
             </div>
@@ -529,37 +523,26 @@ export function BrandPageContent({ content }: Props) {
             {content.merchSubtitle}
           </p>
 
-          <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
             {content.merchItems.map((item, index) => (
-              <li key={`${item.name}-${index}`} className="text-center">
+              <li
+                key={`${item.name}-${index}`}
+                className="flex flex-col items-center gap-3"
+              >
                 <div
-                  className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-zinc-200"
-                  style={{
-                    background:
-                      MERCH_CARD_BG_BY_KIND[item.kind] ??
-                      "linear-gradient(135deg,#f8fafc 0%,#e5e7eb 100%)",
-                  }}
+                  className="relative aspect-square w-full overflow-hidden rounded-3xl"
+                  style={{ backgroundColor: PATTERN_MASK_BG }}
                 >
-                  {item.kind === "bag" || item.kind === "case" ? (
-                    <div
-                      className="absolute inset-0 opacity-90"
-                      style={{
-                        backgroundImage:
-                          "radial-gradient(circle at 0 0, #ffffff 0 38%, transparent 39%), radial-gradient(circle at 100% 100%, #ffffff 0 38%, transparent 39%), linear-gradient(90deg, transparent 0 8%, #ffffff 8% 19%, transparent 19% 32%, #ffffff 32% 43%, transparent 43% 56%, #ffffff 56% 67%, transparent 67% 80%, #ffffff 80% 91%, transparent 91% 100%)",
-                        backgroundSize: "50% 50%, 50% 50%, 100% 100%",
-                        backgroundPosition: "0 0, 100% 100%, 0 0",
-                      }}
-                      aria-hidden
-                    />
-                  ) : null}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="rounded-full bg-white/85 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-neutral-700">
-                      {item.kind}
-                    </span>
-                  </div>
+                  <Image
+                    src={item.imageSrc}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                 </div>
                 <p
-                  className="mt-3 text-xl font-bold tracking-tight"
+                  className={`text-center text-sm font-bold uppercase tracking-[0.14em] sm:text-base ${inter.className}`}
                   style={{ color: BRAND_HEADING_BLUE }}
                 >
                   {item.name}
@@ -582,32 +565,21 @@ export function BrandPageContent({ content }: Props) {
 
           <ul className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
             {content.mockupItems.map((item, i) => (
-              <li key={`${item.kind}-${i}`} className="overflow-hidden rounded-3xl border border-zinc-200">
+              <li
+                key={`${item.kind}-${i}`}
+                className="overflow-hidden rounded-3xl"
+              >
                 <div
                   className="relative aspect-[16/10]"
-                  style={{
-                    background:
-                      MOCKUP_CARD_BG_BY_KIND[item.kind] ??
-                      "linear-gradient(140deg,#9ca3af 0%,#6b7280 100%)",
-                  }}
+                  style={{ backgroundColor: PATTERN_MASK_BG }}
                 >
-                  <div className="absolute inset-x-[10%] top-[16%] h-[62%] rounded-md bg-white/95 shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
-                    <div className="absolute left-[6%] top-[10%] h-[34%] w-[42%] rounded-sm bg-[#f8fafc]">
-                      <div className="h-full w-full bg-[radial-gradient(circle_at_20%_20%,#de2e06_0_14%,transparent_15%),linear-gradient(135deg,#f8fafc_0%,#e2e8f0_100%)]" />
-                    </div>
-                    <div className="absolute right-[6%] top-[10%] h-[72%] w-[48%] rounded-sm bg-[linear-gradient(135deg,#de2e06_0%,#7f1d1d_100%)] opacity-75" />
-                    <div className="absolute bottom-[10%] left-[6%] h-2 w-[28%] rounded bg-[#de2e06]/80" />
-                    <div className="absolute bottom-[10%] left-[38%] h-2 w-[18%] rounded bg-[#0062d2]/70" />
-                  </div>
-                  {(item.kind === "metro" || item.kind === "station") && (
-                    <div className="absolute inset-x-0 top-[6%] h-2 bg-black/20" aria-hidden />
-                  )}
-                  {item.kind === "billboard" && (
-                    <div className="absolute inset-x-[12%] bottom-[8%] h-4 rounded bg-black/45" aria-hidden />
-                  )}
-                  {item.kind === "bus-stop" && (
-                    <div className="absolute right-[7%] top-[8%] h-[84%] w-[2px] bg-white/45" aria-hidden />
-                  )}
+                  <Image
+                    src={item.imageSrc}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </li>
             ))}
