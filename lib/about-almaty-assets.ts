@@ -1,4 +1,4 @@
-/** Hero «О Алматы»: панорама города и гор */
+/** Hero «Об Алматы»: панорама города и гор */
 export const ABOUT_ALMATY_HERO_IMAGE =
   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80";
 

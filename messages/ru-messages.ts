@@ -2,7 +2,7 @@ import type { Messages } from "./types";
 export const ru: Messages = {
   nav: {
     home: "Главная",
-    aboutAlmaty: "О Алматы",
+    aboutAlmaty: "Об Алматы",
     news: "Новости",
     symbol: "Символ",
     brand: "Бренд",
@@ -709,7 +709,7 @@ export const ru: Messages = {
     ],
   },
   subpages: {
-    aboutAlmatyTitle: "О Алматы",
+    aboutAlmatyTitle: "Об Алматы",
     newsTitle: "Новости",
     newsBody:
       "Лента новостей — подключите CMS или статические материалы по готовности.",
