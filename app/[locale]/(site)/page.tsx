@@ -2,6 +2,7 @@ import { CtaSection } from "@/components/landing/cta-section";
 import { HeroSection } from "@/components/landing/hero-section";
 import { NewsPreviewSection } from "@/components/landing/news-preview-section";
 import { PeaksSection } from "@/components/landing/peaks-section";
+import { ScrollReveal } from "@/components/landing/scroll-reveal";
 import { getMessages } from "@/messages";
 
 export default async function HomePage({
@@ -14,10 +15,18 @@ export default async function HomePage({
 
   return (
     <>
-      <HeroSection hero={t.hero} localePrefix={`/${locale}`} />
-      <PeaksSection peaks={t.peaks} localePrefix={`/${locale}`} />
-      <NewsPreviewSection news={t.newsPreview} localePrefix={`/${locale}`} />
-      <CtaSection cta={t.cta} localePrefix={`/${locale}`} />
+      <ScrollReveal immediate>
+        <HeroSection hero={t.hero} localePrefix={`/${locale}`} />
+      </ScrollReveal>
+      <ScrollReveal delayMs={70}>
+        <PeaksSection peaks={t.peaks} localePrefix={`/${locale}`} />
+      </ScrollReveal>
+      <ScrollReveal delayMs={120}>
+        <NewsPreviewSection news={t.newsPreview} localePrefix={`/${locale}`} />
+      </ScrollReveal>
+      <ScrollReveal delayMs={160}>
+        <CtaSection cta={t.cta} localePrefix={`/${locale}`} />
+      </ScrollReveal>
     </>
   );
 }

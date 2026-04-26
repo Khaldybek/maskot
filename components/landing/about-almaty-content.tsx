@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Calendar, MapPin, Mountain, Users } from "lucide-react";
+import { ScrollReveal } from "@/components/landing/scroll-reveal";
 import { StoryBlocksWithSlider } from "@/components/landing/story-blocks-with-slider";
 import {
   ABOUT_ALMATY_HERO_IMAGE,
@@ -25,6 +26,7 @@ export function AboutAlmatyContent({ content }: Props) {
     <div className="min-w-0 bg-white pb-16 pt-2 sm:pb-20">
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="relative">
+          <ScrollReveal immediate>
           <div className="relative min-h-[280px] overflow-hidden rounded-[2rem] sm:min-h-[360px] sm:rounded-[2.25rem] lg:min-h-[420px] lg:rounded-[2.5rem]">
             <Image
               src={ABOUT_ALMATY_HERO_IMAGE}
@@ -48,8 +50,9 @@ export function AboutAlmatyContent({ content }: Props) {
               </p>
             </div>
           </div>
+          </ScrollReveal>
 
-          <div className="relative z-20 -mt-14 px-0 sm:-mt-20 lg:-mt-24">
+          <ScrollReveal delayMs={60} className="relative z-20 -mt-14 px-0 sm:-mt-20 lg:-mt-24">
             <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
               {blocks.map((block, i) => {
                 const Icon = icons[i];
@@ -73,7 +76,7 @@ export function AboutAlmatyContent({ content }: Props) {
                 );
               })}
             </ul>
-          </div>
+          </ScrollReveal>
         </div>
 
         <StoryBlocksWithSlider

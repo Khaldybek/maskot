@@ -9,6 +9,7 @@ import {
   NEWS_PAGE_HERO_IMAGE,
   NEWS_PAGE_NEWSLETTER_BG,
 } from "@/lib/news-page-assets";
+import { ScrollReveal } from "@/components/landing/scroll-reveal";
 
 type Props = {
   content: Messages["newsPage"];
@@ -60,6 +61,7 @@ export function NewsPageContent({ content }: Props) {
   return (
     <div className="min-w-0 bg-white pb-16 pt-2 sm:pb-20">
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <ScrollReveal immediate>
         <div className="relative overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_60px_-12px_rgba(0,0,0,0.22)] sm:rounded-[2.25rem] lg:rounded-[2.5rem] dark:bg-zinc-900 dark:shadow-[0_24px_60px_-12px_rgba(0,0,0,0.45)]">
           <div className="relative min-h-[300px] sm:min-h-[380px] lg:min-h-[420px]">
             <Image
@@ -101,9 +103,11 @@ export function NewsPageContent({ content }: Props) {
             </div>
           </div>
         </div>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={40} className="mt-8 sm:mt-10">
         <div
-          className="mt-8 flex flex-wrap justify-center gap-2 sm:mt-10 sm:justify-start"
+          className="flex flex-wrap justify-center gap-2 sm:justify-start"
           role="toolbar"
           aria-label={content.categoriesToolbarAria}
         >
@@ -126,14 +130,18 @@ export function NewsPageContent({ content }: Props) {
             );
           })}
         </div>
+        </ScrollReveal>
 
         {filtered.length === 0 ? (
-          <p className="mt-12 text-center text-base text-neutral-600 dark:text-zinc-400">
-            {content.emptyFiltered}
-          </p>
+          <ScrollReveal delayMs={60} className="mt-12">
+            <p className="text-center text-base text-neutral-600 dark:text-zinc-400">
+              {content.emptyFiltered}
+            </p>
+          </ScrollReveal>
         ) : (
+          <ScrollReveal delayMs={60} className="mt-12 lg:mt-16">
           <>
-            <h2 className="mt-12 text-2xl font-bold tracking-tight text-neutral-900 dark:text-zinc-50 sm:text-3xl lg:mt-16">
+            <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-zinc-50 sm:text-3xl">
               {content.featuredTitle}
             </h2>
 
@@ -256,10 +264,12 @@ export function NewsPageContent({ content }: Props) {
               </>
             )}
           </>
+          </ScrollReveal>
         )}
       </div>
 
       <div className="mx-auto mt-16 min-w-0 max-w-[1400px] px-4 sm:mt-20 sm:px-6 lg:px-8">
+        <ScrollReveal delayMs={40}>
         <section className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.25rem]">
           <div className="relative min-h-[320px] sm:min-h-[360px]">
             <Image
@@ -309,6 +319,7 @@ export function NewsPageContent({ content }: Props) {
             </div>
           </div>
         </section>
+        </ScrollReveal>
       </div>
     </div>
   );

@@ -16,6 +16,7 @@ import {
   Tent,
   Users,
 } from "lucide-react";
+import { ScrollReveal } from "@/components/landing/scroll-reveal";
 import { BRAND_PAGE_HERO_IMAGE } from "@/lib/brand-page-assets";
 import type { Messages } from "@/messages";
 
@@ -59,6 +60,7 @@ export function BrandPageContent({ content }: Props) {
   return (
     <div className="min-w-0 bg-white pb-16 pt-2 sm:pb-20">
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <ScrollReveal immediate>
         <div className="relative overflow-hidden rounded-[2rem] shadow-[0_24px_60px_-12px_rgba(0,0,0,0.2)] sm:rounded-[2.25rem] lg:rounded-[2.5rem] dark:shadow-[0_24px_60px_-12px_rgba(0,0,0,0.45)]">
           <div className="relative min-h-[300px] sm:min-h-[380px] lg:min-h-[420px]">
             <Image
@@ -83,7 +85,9 @@ export function BrandPageContent({ content }: Props) {
             </div>
           </div>
         </div>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={40}>
         <section className="mx-auto mt-16 max-w-3xl sm:mt-20 lg:mt-24">
           <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
             {content.identityTitle}
@@ -92,7 +96,9 @@ export function BrandPageContent({ content }: Props) {
             {content.identityBody}
           </p>
         </section>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={85}>
         <section className="mt-16 flex flex-col gap-10 sm:mt-20 lg:mt-24 lg:flex-row lg:items-start lg:gap-14 xl:gap-20">
           <div className="order-1 w-full lg:order-none lg:max-w-[52%] lg:flex-1">
             <div className="rounded-[1.75rem] bg-zinc-50 p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-zinc-100 sm:rounded-[2rem] sm:p-10">
@@ -185,7 +191,9 @@ export function BrandPageContent({ content }: Props) {
             ))}
           </div>
         </section>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={130}>
         <section className="mt-20 sm:mt-24 lg:mt-28">
           <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
             {content.paletteTitle}
@@ -224,7 +232,9 @@ export function BrandPageContent({ content }: Props) {
             ))}
           </ul>
         </section>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={175}>
         <section className="mt-20 sm:mt-24 lg:mt-28" aria-labelledby="color-pairings-heading">
           <h2
             id="color-pairings-heading"
@@ -263,7 +273,9 @@ export function BrandPageContent({ content }: Props) {
             ))}
           </ul>
         </section>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={220}>
         <section className="mt-20 sm:mt-24 lg:mt-28" aria-labelledby="typography-overview-heading">
           <h2
             id="typography-overview-heading"
@@ -325,7 +337,9 @@ export function BrandPageContent({ content }: Props) {
             </article>
           </div>
         </section>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={265}>
         <section className="mt-20 sm:mt-24 lg:mt-28" aria-labelledby="typography-scale-heading">
           <h2
             id="typography-scale-heading"
@@ -385,7 +399,9 @@ export function BrandPageContent({ content }: Props) {
             })}
           </div>
         </section>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={310}>
         <section
           className="mt-20 sm:mt-24 lg:mt-28"
           aria-labelledby="iconography-heading"
@@ -429,7 +445,9 @@ export function BrandPageContent({ content }: Props) {
             })}
           </ul>
         </section>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={355}>
         <section
           className="mt-16 border-t border-zinc-200 pt-14 sm:mt-20 sm:pt-16 lg:mt-24 lg:pt-20"
           aria-labelledby="icon-guidelines-heading"
@@ -457,7 +475,9 @@ export function BrandPageContent({ content }: Props) {
             ))}
           </ul>
         </section>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={400}>
         <section className="mt-20 sm:mt-24 lg:mt-28" aria-labelledby="patterns-heading">
           <h2
             id="patterns-heading"
@@ -511,7 +531,9 @@ export function BrandPageContent({ content }: Props) {
             </div>
           </div>
         </section>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={445}>
         <section className="mt-20 sm:mt-24 lg:mt-28" aria-labelledby="merch-heading">
           <h2
             id="merch-heading"
@@ -551,7 +573,9 @@ export function BrandPageContent({ content }: Props) {
             ))}
           </ul>
         </section>
+        </ScrollReveal>
 
+        <ScrollReveal delayMs={490}>
         <section className="mt-20 sm:mt-24 lg:mt-28" aria-labelledby="mockups-heading">
           <h2
             id="mockups-heading"
@@ -585,6 +609,7 @@ export function BrandPageContent({ content }: Props) {
             ))}
           </ul>
         </section>
+        </ScrollReveal>
       </div>
     </div>
   );

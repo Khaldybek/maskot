@@ -16,6 +16,7 @@ import {
   IconTiktok,
   IconYoutube,
 } from "@/components/landing/social-footer-icons";
+import { ScrollReveal } from "@/components/landing/scroll-reveal";
 
 const accent = "#DE2E06";
 
@@ -74,6 +75,7 @@ export function ContactPageContent({ content }: Props) {
   return (
     <div className="min-w-0 bg-white pb-16 pt-2 sm:pb-20">
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <ScrollReveal immediate>
         <div className="relative overflow-hidden rounded-[2rem] shadow-[0_24px_60px_-12px_rgba(0,0,0,0.2)] sm:rounded-[2.25rem] lg:rounded-[2.5rem]">
           <div className="relative min-h-[280px] sm:min-h-[340px] lg:min-h-[380px]">
             <Image
@@ -95,8 +97,10 @@ export function ContactPageContent({ content }: Props) {
             </div>
           </div>
         </div>
+        </ScrollReveal>
 
-        <ul className="relative z-10 -mt-10 grid grid-cols-1 gap-3 sm:-mt-14 sm:grid-cols-2 sm:gap-4 lg:-mt-16 lg:grid-cols-4 lg:gap-4">
+        <ScrollReveal delayMs={50} className="relative z-10 -mt-10 sm:-mt-14 lg:-mt-16">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-4">
           <li className="flex min-w-0 justify-center">
             <article className="w-full max-w-[200px] rounded-xl border border-zinc-100 bg-white p-4 shadow-[0_4px_14px_rgba(0,0,0,0.08),0_14px_44px_rgba(0,0,0,0.14)] sm:max-w-[220px] sm:p-4">
               <Phone
@@ -186,8 +190,10 @@ export function ContactPageContent({ content }: Props) {
             </article>
           </li>
         </ul>
+        </ScrollReveal>
 
-        <div className="mt-16 grid min-w-0 grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-14 lg:gap-x-16">
+        <ScrollReveal delayMs={80} className="mt-16 min-w-0 lg:mt-20">
+        <div className="grid min-w-0 grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14 lg:gap-x-16">
           <section className="min-w-0">
             <h2
               className="text-xl font-bold sm:text-2xl"
@@ -290,8 +296,10 @@ export function ContactPageContent({ content }: Props) {
             </form>
           </section>
         </div>
+        </ScrollReveal>
 
-        <section className="mt-20 text-center sm:mt-24 lg:mt-28">
+        <ScrollReveal delayMs={40} className="mt-20 sm:mt-24 lg:mt-28">
+        <section className="text-center">
           <h2
             className="text-2xl font-bold sm:text-3xl"
             style={{ color: accent }}
@@ -323,8 +331,10 @@ export function ContactPageContent({ content }: Props) {
             </Link>
           </p>
         </section>
+        </ScrollReveal>
 
-        <section className="mt-20 overflow-x-clip sm:mt-24 lg:mt-28">
+        <ScrollReveal delayMs={60} className="mt-20 overflow-x-clip sm:mt-24 lg:mt-28">
+        <section>
           <h2
             className="text-center text-2xl font-bold tracking-tight sm:text-3xl"
             style={{ color: accent }}
@@ -381,6 +391,7 @@ export function ContactPageContent({ content }: Props) {
             </div>
           </div>
         </section>
+        </ScrollReveal>
       </div>
     </div>
   );

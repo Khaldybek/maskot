@@ -1,3 +1,4 @@
+import { ScrollReveal } from "@/components/landing/scroll-reveal";
 import { StoryBlocksWithSlider } from "@/components/landing/story-blocks-with-slider";
 import { SYMBOL_PAGE_STORY_SLIDES } from "@/lib/symbol-page-assets";
 import type { Messages } from "@/messages";
@@ -10,28 +11,30 @@ export function SymbolPageContent({ content }: Props) {
   return (
     <div className="min-w-0 bg-white pb-16 pt-2 sm:pb-20">
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <div className="relative mx-auto aspect-[2/1] w-full max-w-3xl overflow-hidden rounded-[2rem] sm:max-w-4xl sm:rounded-[2.25rem] lg:rounded-[2.5rem]">
-          <video
-            className="absolute inset-0 z-0 h-full w-full object-cover"
-            autoPlay
-            muted
-            playsInline
-            loop
-            preload="auto"
-            disablePictureInPicture
-            aria-label={content.heroImageAlt}
-          >
-            <source src="/video.mp4" type="video/mp4" />
-          </video>
-          <div
-            className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[min(28%,7rem)] bg-gradient-to-r from-black/35 to-transparent sm:w-[min(24%,6.5rem)]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-[min(28%,7rem)] bg-gradient-to-l from-black/35 to-transparent sm:w-[min(24%,6.5rem)]"
-            aria-hidden
-          />
-        </div>
+        <ScrollReveal immediate className="w-full">
+          <div className="relative mx-auto h-[300px] w-full max-w-4xl overflow-hidden rounded-[2rem] sm:h-[240px] sm:rounded-[2.25rem] md:h-[260px] lg:h-[380px] lg:max-w-5xl lg:rounded-[2.5rem]">
+            <video
+              className="absolute inset-0 z-0 h-full w-full object-cover"
+              autoPlay
+              muted
+              playsInline
+              loop
+              preload="auto"
+              disablePictureInPicture
+              aria-label={content.heroImageAlt}
+            >
+              <source src="/video.mp4" type="video/mp4" />
+            </video>
+            <div
+              className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[min(28%,7rem)] bg-gradient-to-r from-black/35 to-transparent sm:w-[min(24%,6.5rem)]"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-[min(28%,7rem)] bg-gradient-to-l from-black/35 to-transparent sm:w-[min(24%,6.5rem)]"
+              aria-hidden
+            />
+          </div>
+        </ScrollReveal>
 
         <StoryBlocksWithSlider
           storyBlocks={content.storyBlocks}
