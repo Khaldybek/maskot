@@ -48,7 +48,7 @@ export function HeroSection({ hero, localePrefix }: Props) {
         </div>
 
         <div className="relative z-10 grid gap-6 p-4 sm:gap-8 sm:p-6 md:grid-cols-5 md:items-stretch md:gap-8 md:p-8 lg:gap-12 lg:p-10">
-          <div className="flex min-w-0 flex-col gap-5 sm:gap-6 md:col-span-3 md:gap-7 lg:min-h-0">
+          <div className="flex min-w-0 w-full max-w-full flex-col gap-5 sm:gap-6 md:col-span-3 md:gap-7 lg:min-h-0">
             <h1 className="text-balance break-words text-xl font-bold uppercase leading-[1.15] tracking-tight text-neutral-900 sm:text-2xl sm:leading-tight md:text-3xl lg:text-4xl xl:text-[2.65rem]">
               <span className="text-[#DE2E06]">{hero.titleHighlight}</span>{" "}
               <span className="text-neutral-900">{hero.titleRest}</span>
@@ -58,29 +58,31 @@ export function HeroSection({ hero, localePrefix }: Props) {
               {hero.subtitle}
             </p>
 
-            <div className="w-full max-w-full rounded-xl bg-[#DE2E06] p-3.5 text-left text-white shadow-lg sm:rounded-[1.25rem] sm:p-4 md:p-5">
-              <p className="text-xs font-medium leading-snug opacity-95 sm:text-sm">
-                {hero.hotlineTitle}
-              </p>
-              <a
-                href={telHref(hero.hotlinePhone)}
-                className="mt-1.5 block w-full text-base font-bold tabular-nums tracking-wide hover:underline sm:mt-2 sm:text-lg md:text-xl"
-              >
-                {hero.hotlinePhone}
-              </a>
-              <p className="mt-1.5 text-[11px] opacity-90 sm:mt-2 sm:text-xs md:text-sm">
-                {hero.hotlineHours}
-              </p>
-            </div>
+            {/* Один столбец flex: горячая линия и ряд карточек — общая ширина; карточки flex-1 basis-0 min-w-0, чтобы трек не разъезжался из-за min-content */}
+            <div className="flex w-full min-w-0 max-w-full flex-col gap-y-3 sm:gap-y-4">
+              <div className="w-full min-w-0 max-w-full overflow-hidden rounded-xl bg-[#DE2E06] p-3.5 text-left text-white shadow-sm sm:rounded-[1.25rem] sm:p-4 md:p-5">
+                <p className="text-xs font-medium leading-snug opacity-95 sm:text-sm">
+                  {hero.hotlineTitle}
+                </p>
+                <a
+                  href={telHref(hero.hotlinePhone)}
+                  className="mt-1.5 block w-full max-w-full break-words text-base font-bold tabular-nums tracking-wide hover:underline sm:mt-2 sm:text-lg md:text-xl"
+                >
+                  {hero.hotlinePhone}
+                </a>
+                <p className="mt-1.5 text-[11px] opacity-90 sm:mt-2 sm:text-xs md:text-sm">
+                  {hero.hotlineHours}
+                </p>
+              </div>
 
-            <div>
               <h2 className="text-base font-semibold text-neutral-900 sm:text-lg md:text-xl">
                 {hero.picksTitle}
               </h2>
-              <div className="mt-3 flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] snap-x snap-mandatory sm:mt-4 sm:gap-3 md:grid md:grid-cols-2 md:gap-3 md:overflow-visible md:snap-none lg:gap-4 [&::-webkit-scrollbar]:hidden">
+
+              <div className="flex w-full min-w-0 max-w-full flex-col gap-2.5 sm:flex-row sm:gap-3 lg:gap-4">
                 <Link
                   href={eventsHref}
-                  className="group relative aspect-[4/3] min-h-[132px] w-[min(100%,260px)] shrink-0 snap-center overflow-hidden rounded-xl sm:min-h-[148px] sm:w-[min(100%,280px)] sm:rounded-2xl md:min-h-0 md:w-auto md:max-w-none"
+                  className="group relative block aspect-[4/3] min-h-[132px] w-full min-w-0 overflow-hidden rounded-xl sm:min-h-[148px] sm:flex-1 sm:basis-0 sm:rounded-2xl md:min-h-0"
                 >
                   <Image
                     src={HERO_PICK_EVENTS_IMAGE}
@@ -96,7 +98,7 @@ export function HeroSection({ hero, localePrefix }: Props) {
                 </Link>
                 <Link
                   href={museumsHref}
-                  className="group relative aspect-[4/3] min-h-[132px] w-[min(100%,260px)] shrink-0 snap-center overflow-hidden rounded-xl sm:min-h-[148px] sm:w-[min(100%,280px)] sm:rounded-2xl md:min-h-0 md:w-auto md:max-w-none"
+                  className="group relative block aspect-[4/3] min-h-[132px] w-full min-w-0 overflow-hidden rounded-xl sm:min-h-[148px] sm:flex-1 sm:basis-0 sm:rounded-2xl md:min-h-0"
                 >
                   <Image
                     src={HERO_PICK_MUSEUMS_IMAGE}

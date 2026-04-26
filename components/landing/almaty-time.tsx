@@ -10,7 +10,8 @@ const TZ = "Asia/Almaty";
 
 export function AlmatyTime() {
   const locale = useLocale();
-  const intlLocale = locale === "kz" ? "kk-KZ" : "ru-KZ";
+  const intlLocale =
+    locale === "kz" ? "kk-KZ" : locale === "en" ? "en-GB" : "ru-KZ";
 
   const format = useCallback(
     (d: Date) =>

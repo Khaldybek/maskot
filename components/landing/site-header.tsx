@@ -59,25 +59,28 @@ function LanguageSwitch({ locale }: { locale: Locale }) {
   const pathname = usePathname();
   const stripped = stripLocaleFromPathname(pathname);
   const suffix = stripped === "/" ? "" : stripped;
-  const ruHref = withLocale("ru", suffix === "" ? "/" : suffix);
-  const kzHref = withLocale("kz", suffix === "" ? "/" : suffix);
+  const pathForLocale = suffix === "" ? "/" : suffix;
+  const ruHref = withLocale("ru", pathForLocale);
+  const kzHref = withLocale("kz", pathForLocale);
+  const enHref = withLocale("en", pathForLocale);
 
   const linkClass = (active: boolean) =>
-    `relative z-10 min-w-[2.75rem] flex-1 rounded-full px-2.5 py-1.5 text-center text-sm font-semibold transition-colors duration-300 sm:min-w-[3rem] sm:px-3 sm:text-base ${
+    `relative z-10 min-w-[2.25rem] rounded-full px-2 py-1.5 text-center text-sm font-semibold transition-colors duration-300 sm:min-w-[2.5rem] sm:px-2.5 sm:text-base ${
       active ? "text-white" : "text-[#DE2E06] hover:text-[#b82505]"
     }`;
 
+  const pillShift =
+    locale === "kz" ? "translate-x-full" : locale === "en" ? "translate-x-[200%]" : "translate-x-0";
+
   return (
     <div
-      className="relative inline-flex rounded-full border border-[#DE2E06] p-0.5"
+      className="relative inline-grid grid-cols-3 rounded-full border border-[#DE2E06] p-0.5"
       role="group"
-      aria-label="Тіл / Язык"
+      aria-label="Language / Тіл / Язык"
     >
       <span
         aria-hidden
-        className={`pointer-events-none absolute inset-y-0.5 rounded-full bg-[#DE2E06] transition-[left,right] duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] motion-reduce:transition-none ${
-          locale === "kz" ? "left-1/2 right-0.5" : "left-0.5 right-1/2"
-        }`}
+        className={`pointer-events-none absolute inset-y-0.5 left-0.5 w-[calc((100%-4px)/3)] rounded-full bg-[#DE2E06] transition-transform duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] motion-reduce:transition-none ${pillShift}`}
       />
       <Link
         href={ruHref}
@@ -94,6 +97,14 @@ function LanguageSwitch({ locale }: { locale: Locale }) {
         hrefLang="kk"
       >
         KZ
+      </Link>
+      <Link
+        href={enHref}
+        scroll={false}
+        className={linkClass(locale === "en")}
+        hrefLang="en"
+      >
+        EN
       </Link>
     </div>
   );

@@ -5,7 +5,11 @@ import { getMessages } from "@/messages";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-  return [{ locale: "ru" }, { locale: "kz" }] satisfies { locale: Locale }[];
+  return [
+    { locale: "ru" },
+    { locale: "kz" },
+    { locale: "en" },
+  ] satisfies { locale: Locale }[];
 }
 
 export default async function LocaleLayout({
