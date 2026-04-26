@@ -9,23 +9,23 @@ export const CONTACT_PAGE_MAP_EMBED_SRC =
 /** Тройки изображений для блоков Must Have (порядок = newcomerBlocks) */
 export const CONTACT_NEWCOMER_SLIDES: readonly (readonly string[])[] = [
   [
-    "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&q=80",
-    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80",
-    "https://images.unsplash.com/photo-1519003722824-cd6e340d2d0d?w=400&q=80",
+    "/pgcan/Ellipse%206809.png",
+    "/pgcan/Ellipse%206810.png",
+    "/pgcan/Ellipse%206811.png",
   ],
   [
-    "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&q=80",
-    "https://images.unsplash.com/photo-1580048911503-f8b22935cc87?w=400&q=80",
-    "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&q=80",
+    "/pgcan/Ellipse%206812.png",
+    "/pgcan/Ellipse%206813.png",
+    "/pgcan/Ellipse%206814.png",
   ],
   [
-    "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&q=80",
-    "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&q=80",
-    "https://images.unsplash.com/photo-1614064641938-3bbee52945c7?w=400&q=80",
+    "/pgcan/Ellipse%206815.png",
+    "/pgcan/Ellipse%206816.png",
+    "/pgcan/Ellipse%206817.png",
   ],
   [
-    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80",
-    "https://images.unsplash.com/photo-1441974231531-6221160919e3?w=400&q=80",
-    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80",
+    "/pgcan/Ellipse%206818.png",
+    "/pgcan/Ellipse%206819.png",
+    "/pgcan/Ellipse%206820.png",
   ],
 ] as const;

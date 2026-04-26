@@ -58,13 +58,13 @@ export function HeroSection({ hero, localePrefix }: Props) {
               {hero.subtitle}
             </p>
 
-            <div className="w-fit max-w-full rounded-xl bg-[#DE2E06] p-3.5 text-white shadow-lg sm:rounded-[1.25rem] sm:p-4 md:p-5">
+            <div className="w-full max-w-full rounded-xl bg-[#DE2E06] p-3.5 text-left text-white shadow-lg sm:rounded-[1.25rem] sm:p-4 md:p-5">
               <p className="text-xs font-medium leading-snug opacity-95 sm:text-sm">
                 {hero.hotlineTitle}
               </p>
               <a
                 href={telHref(hero.hotlinePhone)}
-                className="mt-1.5 block w-fit text-base font-bold tabular-nums tracking-wide hover:underline sm:mt-2 sm:text-lg md:text-xl"
+                className="mt-1.5 block w-full text-base font-bold tabular-nums tracking-wide hover:underline sm:mt-2 sm:text-lg md:text-xl"
               >
                 {hero.hotlinePhone}
               </a>
