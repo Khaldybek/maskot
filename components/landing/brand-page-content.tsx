@@ -507,8 +507,8 @@ export function BrandPageContent({ content }: Props) {
               />
               <p className="pointer-events-none absolute bottom-5 left-5 z-10 text-lg font-bold tracking-wide text-white sm:bottom-6 sm:left-6 sm:text-[1.75rem]">
                 {content.patternMountainLabel}
-              </p>
-            </div>
+                </p>
+              </div>
 
             <div
               className="relative aspect-square overflow-hidden rounded-3xl"

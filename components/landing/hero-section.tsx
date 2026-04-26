@@ -58,17 +58,19 @@ export function HeroSection({ hero, localePrefix }: Props) {
               {hero.subtitle}
             </p>
 
-            <div className="rounded-xl bg-[#DE2E06] p-4 text-white shadow-lg sm:rounded-[1.25rem] sm:p-5 md:p-6">
+            <div className="w-fit max-w-full rounded-xl bg-[#DE2E06] p-3.5 text-white shadow-lg sm:rounded-[1.25rem] sm:p-4 md:p-5">
               <p className="text-xs font-medium leading-snug opacity-95 sm:text-sm">
                 {hero.hotlineTitle}
               </p>
               <a
                 href={telHref(hero.hotlinePhone)}
-                className="mt-2 block w-fit text-lg font-bold tracking-wide hover:underline sm:text-xl md:text-2xl"
+                className="mt-1.5 block w-fit text-base font-bold tabular-nums tracking-wide hover:underline sm:mt-2 sm:text-lg md:text-xl"
               >
                 {hero.hotlinePhone}
               </a>
-              <p className="mt-2 text-xs opacity-90 sm:mt-3 sm:text-sm">{hero.hotlineHours}</p>
+              <p className="mt-1.5 text-[11px] opacity-90 sm:mt-2 sm:text-xs md:text-sm">
+                {hero.hotlineHours}
+              </p>
             </div>
 
             <div>
@@ -112,8 +114,8 @@ export function HeroSection({ hero, localePrefix }: Props) {
             </div>
           </div>
 
-          <div className="flex min-w-0 flex-1 flex-col md:col-span-2 md:min-h-[300px] lg:min-h-0 lg:self-stretch">
-            <div className="flex min-h-0 flex-1 flex-col lg:h-full">
+          <div className="flex min-h-0 min-w-0 flex-1 flex-col md:col-span-2 md:h-full md:min-h-0 lg:self-stretch">
+            <div className="flex min-h-0 flex-1 flex-col md:h-full lg:h-full">
               <HeroSlider
                 slides={hero.slider}
                 images={HERO_SLIDER_IMAGES}

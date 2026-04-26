@@ -65,7 +65,7 @@ export function HeroSlider({
   const src = images[active] ?? images[0];
 
   return (
-    <div className="relative flex h-full min-h-[260px] w-full min-w-0 flex-1 flex-col overflow-hidden rounded-2xl bg-zinc-300 shadow-xl sm:min-h-[300px] sm:rounded-[2rem] md:min-h-[360px] lg:min-h-0">
+    <div className="relative flex h-full min-h-[220px] w-full min-w-0 flex-1 flex-col overflow-hidden rounded-2xl bg-zinc-300 shadow-xl sm:min-h-[240px] sm:rounded-[2rem] md:min-h-0">
       <div className="relative h-full min-h-0 flex-1">
         <Image
           key={src}
