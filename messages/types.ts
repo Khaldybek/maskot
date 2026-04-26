@@ -167,6 +167,10 @@ export type Messages = {
       paragraphs: string[];
       slideAlts: string[];
     }>;
+    /** Блок «горный дух / снежный барс»: фото + текст */
+    mountainSpiritTitle: string;
+    mountainSpiritParagraphs: [string, string];
+    mountainSpiritImageAlt: string;
   };
   brandPage: {
     heroTitle: string;
@@ -181,6 +185,11 @@ export type Messages = {
     iconLabelApple: string;
     iconLabelYurt: string;
     iconLabelAla: string;
+    mascotTitle: string;
+    mascotIconAlt: string;
+    mascotIntro: string;
+    mascotOutro: string;
+    mascotImageAlts: [string, string, string, string, string, string];
     paletteTitle: string;
     colorHexLabel: string;
     colorRgbLabel: string;

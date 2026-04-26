@@ -318,6 +318,13 @@ export const en: Messages = {
         ],
       },
     ],
+    mountainSpiritTitle: "Mountain spirit — the snow leopard",
+    mountainSpiritParagraphs: [
+      "The snow leopard is Almaty’s unseen guardian, living on the line between land and sky. Its grace, quiet strength, and power to move across steep rock make it a true master of the Zailiysky Alatau.",
+      "This noble symbol reflects the city’s inner energy: calm confidence, independence, and the ability to keep balance between the ancient rhythm of the mountains and the pace of modern life.",
+    ],
+    mountainSpiritImageAlt:
+      "Snow leopard mascot Barys skating on an outdoor ice rink with mountains in the background",
   },
   brandPage: {
     heroTitle: "ALMATY BRAND",
@@ -338,6 +345,20 @@ export const en: Messages = {
     iconLabelApple: "APPLE",
     iconLabelYurt: "YURT",
     iconLabelAla: "ALMATY",
+    mascotTitle: "City mascot — Barys",
+    mascotIconAlt: "Barys the snow leopard mascot",
+    mascotIntro:
+      "Barys is a living symbol and the official mascot of Almaty. Chosen as the lead brand character, he helps make the city’s communication with residents and visitors warmer, more open, and more inclusive.",
+    mascotOutro:
+      "The mascot’s role: Barys appears as a friendly guide. He helps tell stories about city events, mountain safety rules, and green initiatives in language everyone can understand.",
+    mascotImageAlts: [
+      "Barys on a ski slope in the mountains",
+      "Barys at the ice rink with visitors",
+      "Barys at the Green Bazaar by a market stall",
+      "Barys in a museum or gallery hall",
+      "Barys with shopping bags by a modern building",
+      "Barys high above the city with the Almaty skyline and mountains",
+    ],
     paletteTitle: "Colour palette",
     colorHexLabel: "HEX",
     colorRgbLabel: "RGB",

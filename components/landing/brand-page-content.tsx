@@ -17,6 +17,10 @@ import {
   Users,
 } from "lucide-react";
 import { ScrollReveal } from "@/components/landing/scroll-reveal";
+import {
+  BRAND_MASCOT_GRID_IMAGES,
+  BRAND_MASCOT_ICON,
+} from "@/lib/brand-bars-assets";
 import { BRAND_PAGE_HERO_IMAGE } from "@/lib/brand-page-assets";
 import type { Messages } from "@/messages";
 
@@ -190,6 +194,53 @@ export function BrandPageContent({ content }: Props) {
               </p>
             ))}
           </div>
+        </section>
+        </ScrollReveal>
+
+        <ScrollReveal delayMs={110}>
+        <section
+          className="mt-20 sm:mt-24 lg:mt-28"
+          aria-labelledby="brand-mascot-heading"
+        >
+          <div className="flex flex-wrap items-end gap-3 sm:items-center sm:gap-4 md:gap-5">
+            <h2
+              id="brand-mascot-heading"
+              className="text-3xl font-bold leading-tight tracking-tight text-neutral-900 sm:text-4xl md:text-[2.25rem] lg:text-[2.5rem] lg:leading-[1.15]"
+            >
+              {content.mascotTitle}
+            </h2>
+            <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16 md:h-[4.5rem] md:w-[4.5rem]">
+              <Image
+                src={BRAND_MASCOT_ICON}
+                alt={content.mascotIconAlt}
+                fill
+                className="object-contain"
+                sizes="72px"
+              />
+            </div>
+          </div>
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-neutral-800 sm:mt-6 sm:text-xl sm:leading-[1.6] md:max-w-4xl md:text-[1.25rem] md:leading-[1.65]">
+            {content.mascotIntro}
+          </p>
+          <ul className="mt-8 grid list-none grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4">
+            {BRAND_MASCOT_GRID_IMAGES.map((src, i) => (
+              <li
+                key={src}
+                className="relative aspect-[4/3] overflow-hidden rounded-xl"
+              >
+                <Image
+                  src={src}
+                  alt={content.mascotImageAlts[i] ?? ""}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                />
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-neutral-800 sm:mt-10 sm:text-xl sm:leading-[1.6] md:max-w-4xl md:text-[1.25rem] md:leading-[1.65]">
+            {content.mascotOutro}
+          </p>
         </section>
         </ScrollReveal>
 

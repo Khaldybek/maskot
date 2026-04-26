@@ -1,6 +1,10 @@
+import Image from "next/image";
 import { ScrollReveal } from "@/components/landing/scroll-reveal";
 import { StoryBlocksWithSlider } from "@/components/landing/story-blocks-with-slider";
-import { SYMBOL_PAGE_STORY_SLIDES } from "@/lib/symbol-page-assets";
+import {
+  SYMBOL_PAGE_MOUNTAIN_SPIRIT_IMAGE,
+  SYMBOL_PAGE_STORY_SLIDES,
+} from "@/lib/symbol-page-assets";
 import type { Messages } from "@/messages";
 
 type Props = {
@@ -43,6 +47,41 @@ export function SymbolPageContent({ content }: Props) {
           sliderNext={content.sliderNext}
           sliderDotAria={content.sliderDotAria}
         />
+
+        <ScrollReveal delayMs={80}>
+          <section
+            className="mt-14 sm:mt-16 lg:mt-20"
+            aria-labelledby="symbol-mountain-spirit-heading"
+          >
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10 xl:gap-14">
+              <div className="relative order-1 min-h-[280px] overflow-hidden rounded-[1.5rem] bg-zinc-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-zinc-200/80 sm:min-h-[320px] sm:rounded-[2rem] lg:order-none lg:min-h-0">
+                <Image
+                  src={SYMBOL_PAGE_MOUNTAIN_SPIRIT_IMAGE}
+                  alt={content.mountainSpiritImageAlt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+              <div className="order-2 flex min-w-0 flex-col justify-center space-y-4 sm:space-y-5 lg:order-none">
+                <h2
+                  id="symbol-mountain-spirit-heading"
+                  className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl"
+                >
+                  {content.mountainSpiritTitle}
+                </h2>
+                {content.mountainSpiritParagraphs.map((p, i) => (
+                  <p
+                    key={i}
+                    className="text-base leading-relaxed text-neutral-800 sm:text-[17px] sm:leading-[1.65]"
+                  >
+                    {p}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
       </div>
     </div>
   );
