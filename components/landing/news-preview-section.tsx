@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { ScrollReveal } from "@/components/landing/scroll-reveal";
 import type { Messages } from "@/messages";
 import { NEWS_PREVIEW_IMAGES } from "@/lib/news-preview-assets";
 
@@ -15,27 +16,30 @@ export function NewsPreviewSection({ news, localePrefix }: Props) {
   return (
     <section className="overflow-x-clip bg-white py-12 sm:py-16 lg:py-20">
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div className="min-w-0">
-            <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl lg:leading-[1.1]">
-              {news.title}
-            </h2>
-            <p className="mt-3 max-w-2xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
-              {news.subtitle}
-            </p>
+        <ScrollReveal>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <div className="min-w-0">
+              <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl lg:leading-[1.1]">
+                {news.title}
+              </h2>
+              <p className="mt-3 max-w-2xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
+                {news.subtitle}
+              </p>
+            </div>
+            <Link
+              href={newsHref}
+              className="inline-flex shrink-0 items-center gap-0.5 self-end text-sm font-semibold text-[#DE2E06] transition hover:underline sm:self-start sm:pt-1"
+            >
+              <span>{news.seeAll}</span>
+              <ChevronRight className="size-4" strokeWidth={2.25} aria-hidden />
+            </Link>
           </div>
-          <Link
-            href={newsHref}
-            className="inline-flex shrink-0 items-center gap-0.5 self-end text-sm font-semibold text-[#DE2E06] transition hover:underline sm:self-start sm:pt-1"
-          >
-            <span>{news.seeAll}</span>
-            <ChevronRight className="size-4" strokeWidth={2.25} aria-hidden />
-          </Link>
-        </div>
+        </ScrollReveal>
 
         <ul className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-6">
           {news.items.map((item, index) => (
             <li key={item.headline}>
+              <ScrollReveal delayMs={index * 80} className="h-full">
               <Link
                 href={newsHref}
                 className="group block outline-none focus-visible:ring-2 focus-visible:ring-[#DE2E06] focus-visible:ring-offset-2"
@@ -67,6 +71,7 @@ export function NewsPreviewSection({ news, localePrefix }: Props) {
                   </h3>
                 </article>
               </Link>
+              </ScrollReveal>
             </li>
           ))}
         </ul>

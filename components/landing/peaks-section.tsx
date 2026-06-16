@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Info } from "lucide-react";
+import { ScrollReveal } from "@/components/landing/scroll-reveal";
 import type { Messages } from "@/messages";
 import { PEAKS_CARD_IMAGES } from "@/lib/peaks-assets";
 
@@ -16,34 +17,37 @@ export function PeaksSection({ peaks, localePrefix }: Props) {
   return (
     <section className="overflow-x-clip bg-white py-12 sm:py-16 lg:py-20">
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div className="min-w-0">
-            <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl lg:leading-[1.1]">
-              {peaks.title}
-            </h2>
-            <p className="mt-3 max-w-2xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
-              {peaks.subtitle}
-            </p>
+        <ScrollReveal>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <div className="min-w-0">
+              <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl lg:leading-[1.1]">
+                {peaks.title}
+              </h2>
+              <p className="mt-3 max-w-2xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
+                {peaks.subtitle}
+              </p>
+            </div>
+            <Link
+              href={seeAllHref}
+              className="inline-flex shrink-0 items-center gap-0.5 self-end text-sm font-semibold text-[#DE2E06] transition hover:underline sm:self-start sm:pt-1"
+            >
+              <span>{peaks.seeAll}</span>
+              <ChevronRight className="size-4" strokeWidth={2.25} aria-hidden />
+            </Link>
           </div>
-          <Link
-            href={seeAllHref}
-            className="inline-flex shrink-0 items-center gap-0.5 self-end text-sm font-semibold text-[#DE2E06] transition hover:underline sm:self-start sm:pt-1"
-          >
-            <span>{peaks.seeAll}</span>
-            <ChevronRight className="size-4" strokeWidth={2.25} aria-hidden />
-          </Link>
-        </div>
+        </ScrollReveal>
 
         <ul className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {peaks.cards.map((card, index) => (
             <li key={card.title}>
+              <ScrollReveal delayMs={index * 80} className="h-full">
               <article className="flex h-full flex-col">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-zinc-200 dark:bg-zinc-800">
+                <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl bg-zinc-200 dark:bg-zinc-800">
                   <Image
                     src={PEAKS_CARD_IMAGES[index] ?? PEAKS_CARD_IMAGES[0]}
                     alt={card.alt}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div
@@ -71,6 +75,7 @@ export function PeaksSection({ peaks, localePrefix }: Props) {
                   </Link>
                 </div>
               </article>
+              </ScrollReveal>
             </li>
           ))}
         </ul>

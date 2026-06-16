@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollReveal } from "@/components/landing/scroll-reveal";
 import type { Messages } from "@/messages";
 import { CTA_BACKGROUND_IMAGE } from "@/lib/cta-assets";
 
@@ -14,6 +15,7 @@ export function CtaSection({ cta, localePrefix }: Props) {
   return (
     <section className="overflow-x-clip bg-white py-12 sm:py-16 lg:py-20">
       <div className="mx-auto min-w-0 max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <ScrollReveal delayMs={40}>
         <div className="relative min-h-[280px] overflow-hidden rounded-[2.5rem] sm:min-h-[320px] sm:rounded-[3rem] lg:min-h-[360px]">
           <Image
             src={CTA_BACKGROUND_IMAGE}
@@ -44,6 +46,7 @@ export function CtaSection({ cta, localePrefix }: Props) {
             </Link>
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

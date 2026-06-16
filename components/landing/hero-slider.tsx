@@ -19,7 +19,10 @@ type Props = {
   slideButtonAriaTemplate: string;
 };
 
-const INTERVAL_MS = 6000;
+const INTERVAL_MS = 4800;
+
+const crossfadeClass =
+  "transition-opacity duration-[800ms] ease-in-out motion-reduce:transition-none";
 
 /**
  * Короткий нижний градиент: фото видно почти на всей высоте,
@@ -61,42 +64,56 @@ export function HeroSlider({
     return () => window.clearInterval(id);
   }, [count]);
 
-  const current = slides[active];
-  const src = images[active] ?? images[0];
-
   return (
     <div className="relative flex h-full min-h-[220px] w-full min-w-0 flex-1 flex-col overflow-hidden rounded-2xl bg-zinc-300 shadow-xl sm:min-h-[240px] sm:rounded-[2rem] md:min-h-0">
       <div className="relative h-full min-h-0 flex-1">
-        <Image
-          key={src}
-          src={src}
-          alt={current.alt}
-          fill
-          className="object-cover transition-opacity duration-500"
-          sizes="(max-width: 1024px) 100vw, 40vw"
-          priority={active === 0}
-        />
+        {slides.map((slide, i) => (
+          <Image
+            key={images[i] ?? i}
+            src={images[i] ?? images[0]}
+            alt={slide.alt}
+            fill
+            className={`object-cover ${crossfadeClass} ${
+              i === active ? "opacity-100" : "opacity-0"
+            }`}
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            priority={i === 0}
+          />
+        ))}
 
         <div
-          className="hero-slider-vignette pointer-events-none absolute inset-0"
+          className="hero-slider-vignette pointer-events-none absolute inset-0 z-[1]"
           style={{ background: SLIDER_BOTTOM_GRADIENT }}
           aria-hidden
         />
 
         <div className="absolute inset-0 z-10 flex flex-col justify-end">
-          <div className="px-4 pb-2 pt-6 sm:px-7 sm:pb-3 sm:pt-10 lg:px-8">
-            <h2 className="text-balance break-words text-xl font-bold leading-tight tracking-tight text-white sm:text-2xl sm:leading-tight md:text-3xl lg:text-[1.85rem] lg:leading-tight xl:text-4xl">
-              {current.title}
-            </h2>
-            <p className="mt-1.5 max-w-md text-[13px] font-normal leading-relaxed text-white/95 sm:mt-2 sm:text-sm md:text-base">
-              {current.description}
-            </p>
-            <Link
-              href={detailsHref}
-              className="mt-3 inline-flex w-full max-w-full items-center justify-center rounded-full border-2 border-[#DE2E06] bg-black/60 px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-black/80 min-[400px]:w-fit sm:mt-4 sm:px-6 sm:py-2.5 sm:text-sm md:mt-5 md:px-7 md:py-3 md:text-base"
-            >
-              {moreDetailsLabel}
-            </Link>
+          <div className="relative px-4 pb-2 pt-6 sm:px-7 sm:pb-3 sm:pt-10 lg:px-8">
+            {slides.map((slide, i) => (
+              <div
+                key={i}
+                className={`${crossfadeClass} ${
+                  i === active
+                    ? "relative opacity-100"
+                    : "pointer-events-none absolute inset-x-4 top-6 opacity-0 sm:inset-x-7 sm:top-10 lg:inset-x-8"
+                }`}
+                aria-hidden={i !== active}
+              >
+                <h2 className="text-balance break-words text-xl font-bold leading-tight tracking-tight text-white sm:text-2xl sm:leading-tight md:text-3xl lg:text-[1.85rem] lg:leading-tight xl:text-4xl">
+                  {slide.title}
+                </h2>
+                <p className="mt-1.5 max-w-md text-[13px] font-normal leading-relaxed text-white/95 sm:mt-2 sm:text-sm md:text-base">
+                  {slide.description}
+                </p>
+                <Link
+                  href={detailsHref}
+                  tabIndex={i === active ? 0 : -1}
+                  className="mt-3 inline-flex w-full max-w-full items-center justify-center rounded-full border-2 border-[#DE2E06] bg-black/60 px-4 py-2 text-xs font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-black/80 min-[400px]:w-fit sm:mt-4 sm:px-6 sm:py-2.5 sm:text-sm md:mt-5 md:px-7 md:py-3 md:text-base"
+                >
+                  {moreDetailsLabel}
+                </Link>
+              </div>
+            ))}
           </div>
 
           <div
@@ -111,11 +128,11 @@ export function HeroSlider({
                 role="tab"
                 aria-selected={i === active}
                 aria-label={ariaSlide(slideButtonAriaTemplate, i + 1, count)}
-                className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-full p-2 transition-opacity hover:opacity-90"
+                className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-full p-2 transition-opacity duration-300 ease-in-out hover:opacity-90"
                 onClick={() => go(i)}
               >
                 <span
-                  className={`block rounded-full transition-all duration-300 ease-out ${
+                  className={`block rounded-full transition-all duration-500 ease-in-out motion-reduce:transition-none ${
                     i === active
                       ? "h-2 w-8 bg-white"
                       : "h-2 w-2 bg-white/40 hover:bg-white/60"

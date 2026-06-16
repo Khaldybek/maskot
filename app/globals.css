@@ -3,9 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  /* Спокойное появление секций при скролле */
-  --reveal-duration: 500ms;
-  --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Спокойное появление секций при скролле (вверх и вниз) */
+  --reveal-duration: 620ms;
+  --reveal-easing: cubic-bezier(0.25, 0.8, 0.25, 1);
   --reveal-shift: 14px;
   --reveal-delay: 0ms;
 }
@@ -34,6 +34,7 @@ html {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+    will-change: auto !important;
   }
 
   .page-enter {
@@ -122,16 +123,17 @@ html[data-a11y-enhanced-focus="true"] :focus-visible {
 /* Появление блоков при скролле (класс «visible» вешает ScrollReveal) */
 .reveal {
   opacity: 0;
-  transform: translateY(var(--reveal-shift));
+  transform: translate3d(0, var(--reveal-shift), 0);
   transition:
     opacity var(--reveal-duration) var(--reveal-easing),
     transform var(--reveal-duration) var(--reveal-easing);
   transition-delay: var(--reveal-delay);
+  will-change: opacity, transform;
 }
 
 .reveal.reveal-visible {
   opacity: 1;
-  transform: none;
+  transform: translate3d(0, 0, 0);
 }
 
 /* Лёгкий вход контента при смене страницы ((site)/template.tsx) */

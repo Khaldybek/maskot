@@ -38,16 +38,10 @@ export function ScrollReveal({
     /* prefers-reduced-motion обрабатывается в globals.css для .reveal */
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            observer.disconnect();
-            return;
-          }
-        }
+      ([entry]) => {
+        setVisible(entry.isIntersecting);
       },
-      { root: null, rootMargin: "0px 0px -6% 0px", threshold: 0.1 },
+      { root: null, rootMargin: "0px 0px -4% 0px", threshold: 0.08 },
     );
 
     observer.observe(el);

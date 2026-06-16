@@ -18,15 +18,9 @@ export default async function HomePage({
       <ScrollReveal immediate>
         <HeroSection hero={t.hero} localePrefix={`/${locale}`} />
       </ScrollReveal>
-      <ScrollReveal delayMs={70}>
-        <PeaksSection peaks={t.peaks} localePrefix={`/${locale}`} />
-      </ScrollReveal>
-      <ScrollReveal delayMs={120}>
-        <NewsPreviewSection news={t.newsPreview} localePrefix={`/${locale}`} />
-      </ScrollReveal>
-      <ScrollReveal delayMs={160}>
-        <CtaSection cta={t.cta} localePrefix={`/${locale}`} />
-      </ScrollReveal>
+      <PeaksSection peaks={t.peaks} localePrefix={`/${locale}`} />
+      <NewsPreviewSection news={t.newsPreview} localePrefix={`/${locale}`} />
+      <CtaSection cta={t.cta} localePrefix={`/${locale}`} />
     </>
   );
 }
