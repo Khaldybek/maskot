@@ -1,6 +1,6 @@
 /** Герой «Контакты»: город и Кок-төбе */
 export const CONTACT_PAGE_HERO_IMAGE =
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80";
+    "/ztau/4.png";
 
 /** Встраиваемая карта (центр — Жандосова 55, Алматы) */
 export const CONTACT_PAGE_MAP_EMBED_SRC =
